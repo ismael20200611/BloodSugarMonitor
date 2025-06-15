@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Sugar</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #c300ff45;
+    }
+    .container {
+      background: #e100ff63;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    input, select, button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+      background: #00c1f6c4;
+      color: white;
+      border: none;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #result, #history {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      border-radius: 8px;
+    }
+
+    /* ✅ Fix for history table responsiveness */
+    #history {
+      overflow-x: auto;
+    }
+
+    #history table {
+      width: 100%;
+      min-width: 800px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #e9ecef;
+    }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* ✅ Optional: Responsive tweak for mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+      input, select, button {
+        font-size: 0.95rem;
+      }
+      #history table {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      };
+      document.getElementById("dateTimeDisplay").textContent = " " + now.toLocaleString(undefined, options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Blood Sugar Monitor</h2>
+    <div id="dateTimeDisplay"> Loading current time...</div>
+    <input type="text" id="fullName" placeholder="Full Name (optional)" />
+    <input type="number" id="age" placeholder="Age (optional)" />
+    <select id="gender">
+      <option value="">Gender (optional)</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <input type="text" id="city" placeholder="City (optional)" />
+    <input type="text" id="phone" placeholder="Phone Number (optional)" />
+    <input type="email" id="email" placeholder="Email (optional)" />
+    <select id="diabetesType" required>
+      <option value="none">-- Select Diabetes Type --</option>
+      <option value="type1">Type 1 Diabetes</option>
+      <option value="type2">Type 2 Diabetes</option>
+      <option value="gestational">Gestational Diabetes</option>
+      <option value="prediabetes">Pre-diabetes</option>
+    </select>
+    <select id="unit">
+      <option value="mgdl">mg/dL</option>
+      <option value="mmol">mmol/L</option>
+    </select>
+    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
+    <button id="checkBtn">Check Blood Sugar</button>
+    <button id="downloadCsv">📥 Download CSV</button>
+    <button id="printResults">🖨️ Print Results</button>
+
+    <div id="result" style="display:none;"></div>
+    <h3>📜 Last 100 Checks</h3>
+    <div id="history"></div>
+  </div>
+
+  <footer>
+    ℹ️ This tool is for personal tracking and educational purposes only.<br>
+    It does not replace professional medical diagnosis, insulin management, or emergency care.
+  </footer>
+
+  <script>
+    function getSuggestions(reading, type) {
+      let thresholds = {
+        hypoglycemia: 70,
+        normalLow: 70,
+        normalHigh: 99,
+        prediabetesHigh: 125,
+        diabetesHigh: 300
+      };
+
+      if (type === "gestational") {
+        thresholds.normalLow = 70;
+        thresholds.normalHigh = 95;
+        thresholds.prediabetesHigh = 135;
+        thresholds.diabetesHigh = 200;
+      } else if (type === "type1" || type === "type2") {
+        thresholds.normalLow = 80;
+        thresholds.normalHigh = 130;
+        thresholds.prediabetesHigh = 180;
+        thresholds.diabetesHigh = 300;
+      } else if (type === "prediabetes") {
+        thresholds.normalLow = 70;
+        thresholds.normalHigh = 99;
+        thresholds.prediabetesHigh = 125;
+        thresholds.diabetesHigh = 180;
+      }
+
+      if (reading < 54) {
+        return {
+          label: "Severe Hypoglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
+          workout: "No exercise. Eat fast-acting sugar and rest.",
+          food: "Drink orange juice, glucose tablets, candies."
+        };
+      } else if (reading < thresholds.hypoglycemia) {
+        return {
+          label: "Hypoglycemia",
+          color: "#dc3545",
+          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
+          workout: "Avoid workout until stable.",
+          food: "Bananas, apples, honey water, fruit juices."
+        };
+      } else if (reading <= thresholds.normalHigh) {
+        return {
+          label: "Normal",
+          color: "#198754",
+          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
+          workout: type === "gestational"
+            ? "🚶 Light walking after meals, pelvic tilts."
+            : type === "type1"
+            ? "🏋️ Light strength training and consistent cardio."
+            : "🏃 Brisk walking, stretching, or cycling.",
+          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples."
+        };
+      } else if (reading <= thresholds.prediabetesHigh) {
+        return {
+          label: "Pre-Diabetes",
+          color: "#ffc107",
+          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
+          workout: "🚶 Daily 30 min walks, basic strength exercises.",
+          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits."
+        };
+      } else if (reading <= thresholds.diabetesHigh) {
+        return {
+          label: "Diabetes",
+          color: "#fd7e14",
+          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
+          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
+          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks."
+        };
+      } else {
+        return {
+          label: "Severe Hyperglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously High! Call 911 immediately!",
+          workout: "❌ No exercise. Seek emergency help.",
+          food: "Drink water, avoid sugar and carbohydrates."
+        };
+      }
+    }
+
+    function saveToLocal(data) {
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      history.unshift(data);
+      localStorage.setItem("sugarHistory", JSON.stringify(history.slice(0, 100)));
+    }
+
+    function buildTable(data) {
+      if(data.length === 0) return "<p>No records yet.</p>";
+      return "<table><thead><tr><th>Date & Time</th><th>Reading (mg/dL)</th><th>Diabetes-Type</th><th>Status</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Phone</th><th>Email</th></tr></thead><tbody>" +
+        data.map(row =>
+          `<tr>
+            <td>${row.date}</td>
+            <td>${row.reading} mg/dL</td>
+            <td>${row.diabetesType}</td>  
+            <td style="color:${row.color}">${row.status}</td> 
+            <td>${row.name}</td>
+            <td>${row.age}</td>
+            <td>${row.gender}</td>
+            <td>${row.city}</td>
+            <td>${row.phone}</td>
+            <td>${row.email}</td>
+      
+          </tr>`
+        ).join('') + "</tbody></table>";
+    }
+
+    function refreshHistory() {
+      const historyBox = document.getElementById("history");
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      historyBox.innerHTML = buildTable(history);
+    }
+
+    document.getElementById("checkBtn").onclick = function () {
+      const readingInput = document.getElementById("reading");
+      const readingVal = readingInput.value.trim();
+      if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
+        alert("Please enter a valid blood sugar reading.");
+        readingInput.focus();
+        return;
+      }
+
+      const reading = parseFloat(readingVal);
+      const unit = document.getElementById("unit").value;
+      const name = document.getElementById("fullName").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const gender = document.getElementById("gender").value;
+      const city = document.getElementById("city").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const diabetesType = document.getElementById("diabetesType").value;
+
+      if (diabetesType === "none") {
+        alert("Please select a diabetes type.");
+        return;
+      }
+
+      let converted = reading;
+      if (unit === "mmol") {
+        converted = reading * 18;
+      }
+
+      const suggestion = getSuggestions(converted, diabetesType);
+      const resultBox = document.getElementById("result");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
+        <p>${suggestion.message}</p>
+        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
+        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+      `;
+
+      const date = new Date().toLocaleString(); // ✅ This line added to fix date
+
+      const entry = {
+        date,
+        diabetesType: diabetesType, // <--- add this
+        name: name || "-",
+        age: age || "-",
+        gender: gender || "-",
+        city: city || "-",
+        phone: phone || "-",
+        email: email || "-",
+        reading: converted.toFixed(1),
+        status: suggestion.label,
+        color: suggestion.color
+      };
+
+      saveToLocal(entry);
+      refreshHistory();
+    };
+
+    document.getElementById("downloadCsv").onclick = function () {
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      if(history.length === 0) {
+        alert("No data to download.");
+        return;
+      }
+      const csv = [
+        ["Date","Reading (mg/dL)","Diabetes-Type","Status","Name","Age","Gender","City","Phone","Email"],
+        ...history.map(row => [
+          `"${row.date}"`,
+          `"${row.reading} mg/dL"`,
+          `"${row.diabetesType}"`,
+           `"${row.status}"`,
+          `"${row.name}"`,
+          `"${row.age}"`,
+          `"${row.gender}"`,
+          `"${row.city}"`,
+          `"${row.phone}"`,
+          `"${row.email}"`
+         
+        ])
+      ].map(r => r.join(",")).join("\n");
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'blood_sugar_history.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+
+    // Print functionality
+    const printResults = document.getElementById('printResults');
+     printResults.addEventListener('click', () => {
+      window.print();
+     });
+   
+    // On page load show last 100 checks automatically
+    refreshHistory();
+  </script>
+</body>
+</html>
