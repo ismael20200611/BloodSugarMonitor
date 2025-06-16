@@ -1,0 +1,49 @@
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            /* flex: 1 1 calc(33% - 20px); */ /* Uncomment for 3 items per row */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-item h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product-item p {
+            font-size: 1em;
+            color: #555;
+        }
+        .product-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .product-item a:hover {
+            background-color: #2980b9;
+        }

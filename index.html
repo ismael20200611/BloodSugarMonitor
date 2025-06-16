@@ -4,10 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blood Sugar</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.style.css">
+  <script src="js/script.js"></script>
 </head>
 <body>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="">Producat</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+         <li class="dropdown">
+          <a href="#" class="dropbtn">Language ▼</a>
+          <div class="dropdown-content">
+           <!-- <a href="Ku/ku_index.html">Kurdish</a>
+            <a href="ar/ar_index.html">Arabic</a>
+            <a href="fr/fr_index.html">French</a>
+            <a href="sp/sp_index.html">Spanish</a>
+            <a href="po/po_index.html">Polish</a>
+            <a href="it/it_index.html">Italian</a>
+            <a href="ch/ch_index.html">Chinese</a>
+            <a href="ge/ge_index.html">German</a>
+          </div>
+        </li> -->
+      </ul>
+
+    </nav>
+
+
+  </header>
+
   <div class="container">
     <h2>Blood Sugar Monitor</h2>
     <div id="dateTimeDisplay"> Loading current time...</div>
@@ -40,11 +78,18 @@
     <div id="result" style="display:none;"></div>
     <h3>📜 Last 100 Checks</h3>
     <div id="history"></div>
-  </div>
+  
 
-  <footer>
     ℹ️ This tool is for personal tracking and educational purposes only.<br>
     It does not replace professional medical diagnosis, insulin management, or emergency care.
+</div>
+  <!-- Footer -->
+  <footer>
+    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Last updated: July 2025</p>
+    &copy; <a class="border-bottom" href="">Blood Sugar Monitor</a>, All Right Reserved.
+    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
   </footer>
 
   <script>

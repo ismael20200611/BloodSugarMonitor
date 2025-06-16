@@ -1,4 +1,15 @@
- function updateDateTime() {
+// old-----------------------------------------------------------------------------
+
+  // Toggle menu functionality
+  function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    menu.classList.toggle("show");
+  }
+// Blood Type Compatibility Checker -end all and info working
+
+
+// -----------------------------------------------------------------------------new
+function updateDateTime() {
       const now = new Date();
       const options = {
         year: "numeric",

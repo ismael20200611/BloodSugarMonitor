@@ -1,10 +1,6 @@
-body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #9e9e9e37;
-    }
+
     .container {
-      background: #74008323;
+      background: #eae4e4a8;
       padding: 20px;
       max-width: 900px;
       margin: auto;
@@ -23,7 +19,7 @@ body {
     }
     button {
       cursor: pointer;
-      background: #00c1f6c4;
+      background: #6b00f67d;
       color: white;
       border: none;
       transition: background 0.3s;
@@ -62,13 +58,6 @@ body {
     th {
       background: #e9ecef;
     }
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
     /* ✅ Optional: Responsive tweak for mobile */
     @media (max-width: 768px) {
       .container {
