@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blood Sugar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Sugar Monitor & Guidance 🩺</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/main_style.css">
+  <link rel="stylesheet" href="css/main_style.css" />
   <script src="js/script.js"></script>
+  <style>
+    .disclaimer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+      background: #e9f0e9;
+      border-left: 4px solid #27632a;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    .disclaimer a {
+      color: #27632a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .disclaimer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+
 </head>
+
 <body>
   <!-- Header with Logo -->
   <header>
@@ -26,10 +51,11 @@
         <li><a href="tools/product.html">Product</a></li>
         <li><a href="tools/about.html">About</a></li>
         <li><a href="tools/contact.html">Contact</a></li>
-         <li class="dropdown">
+        <li class="dropdown">
           <a href="#" class="dropbtn">Language ▼</a>
           <div class="dropdown-content">
-           <!-- <a href="Ku/ku_index.html">Kurdish</a>
+            <!--
+            <a href="Ku/ku_index.html">Kurdish</a>
             <a href="ar/ar_index.html">Arabic</a>
             <a href="fr/fr_index.html">French</a>
             <a href="sp/sp_index.html">Spanish</a>
@@ -37,18 +63,17 @@
             <a href="it/it_index.html">Italian</a>
             <a href="ch/ch_index.html">Chinese</a>
             <a href="ge/ge_index.html">German</a>
+            -->
           </div>
-        </li> -->
+        </li>
       </ul>
-
     </nav>
-
-
   </header>
 
   <div class="container">
-    <h2>Blood Sugar Monitor</h2>
+    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
     <div id="dateTimeDisplay"> Loading current time...</div>
+
     <input type="text" id="fullName" placeholder="Full Name (optional)" />
     <input type="number" id="age" placeholder="Age (optional)" />
     <select id="gender">
@@ -59,48 +84,240 @@
     <input type="text" id="city" placeholder="City (optional)" />
     <input type="text" id="phone" placeholder="Phone Number (optional)" />
     <input type="email" id="email" placeholder="Email (optional)" />
+
     <select id="diabetesType" required>
       <option value="none">-- Select Diabetes Type --</option>
+      <option value="non_diabetic">Normal (No Diabetes)</option>
       <option value="type1">Type 1 Diabetes</option>
       <option value="type2">Type 2 Diabetes</option>
       <option value="gestational">Gestational Diabetes</option>
       <option value="prediabetes">Pre-diabetes</option>
     </select>
+
     <select id="unit">
       <option value="mgdl">mg/dL</option>
       <option value="mmol">mmol/L</option>
     </select>
+
     <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
     <button id="checkBtn">Check Blood Sugar</button>
     <button id="downloadCsv">📥 Download CSV</button>
     <button id="printResults">🖨️ Print Results</button>
 
+    <div class="disclaimer">
+      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
+        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
+        diagnosis and management of blood sugar or diabetes.</p>
+      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+          href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
+          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          <div style="color: red;">
+      ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However, it is important to note that this tool is not a substitute for professional medical advice or treatment.
+      Always consult with a healthcare professional for personalized medical advice and treatment plans.
+      <br />
+      <br />
+      ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+      <br />
+      <br />
+      🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+    </div>
+    </div>
+    
+
     <div id="result" style="display:none;"></div>
+
     <h3>📜 Last 100 Checks</h3>
     <div id="history"></div>
-  
-    <div style="color: red;">
-    ℹ️ This tool is for personal tracking and educational purposes only.<br>
-    It does not replace professional medical diagnosis, insulin management, or emergency care.
-    </div>
-</div>
+
+
+  </div>
+
+
+
+
+
   <!-- Footer -->
   <footer>
     <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
     <p>Last updated: July 2025</p>
-    &copy; <a class="border-bottom" href="">Blood Sugar Monitor</a>, All Right Reserved.
-    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    <p>
+      &copy; <a class="border-bottom" href="">Blood Sugar Monitor</a>, All Right Reserved.<br />
+      Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
     </p>
   </footer>
 
   <script>
-    
+    // Toggle menu functionality
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("show");
+    }
+
+    // Update the date/time display every second
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      };
+      document.getElementById("dateTimeDisplay").textContent = " " + now.toLocaleString(undefined, options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Suggestion logic based on reading and diabetes type
+    function getSuggestions(reading, type) {
+      let thresholds;
+
+      switch (type) {
+        case "non_diabetic":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 180,
+          };
+          break;
+
+        case "type1":
+        case "type2":
+          thresholds = {
+            hypoglycemia: 80,
+            normalLow: 80,
+            normalHigh: 130,
+            prediabetesHigh: 180,
+            diabetesHigh: 300,
+          };
+          break;
+
+        case "gestational":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 95,
+            prediabetesHigh: 135,
+            diabetesHigh: 200,
+          };
+          break;
+
+        case "prediabetes":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 180,
+          };
+          break;
+
+        default:
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 300,
+          };
+      }
+
+      if (reading < 54) {
+        return {
+          label: "Severe Hypoglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
+          workout: "No exercise. Eat fast-acting sugar and rest.",
+          food: "Drink orange juice, glucose tablets, candies.",
+        };
+      } else if (reading < thresholds.hypoglycemia) {
+        return {
+          label: "Hypoglycemia",
+          color: "#dc3545",
+          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
+          workout: "Avoid workout until stable.",
+          food: "Bananas, apples, honey water, fruit juices.",
+        };
+      } else if (reading <= thresholds.normalHigh) {
+        return {
+          label: "Normal",
+          color: "#198754",
+          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
+          workout: "🏃 Light cardio or walking.",
+          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+        };
+      } else if (reading <= thresholds.prediabetesHigh) {
+        return {
+          label: "Pre-Diabetes",
+          color: "#ffc107",
+          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
+          workout: "🚶 Daily 30 min walks, basic strength exercises.",
+          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+        };
+      } else if (reading <= thresholds.diabetesHigh) {
+        return {
+          label: "Diabetes",
+          color: "#fd7e14",
+          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
+          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
+          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+        };
+      } else {
+        return {
+          label: "Severe Hyperglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously High! Call 911 immediately!",
+          workout: "❌ No exercise. Seek emergency help.",
+          food: "Drink water, avoid sugar and carbohydrates.",
+        };
+      }
+    }
+
+    // Save entry to localStorage and keep only last 100
+    function saveToLocal(data) {
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      history.unshift(data);
+      localStorage.setItem("sugarHistory", JSON.stringify(history.slice(0, 100)));
+    }
+
+    // Build HTML table for history
+    function buildTable(data) {
+      if (data.length === 0) return "<p>No records yet.</p>";
+      return (
+        "<table><thead><tr><th>Date & Time</th><th>Reading (mg/dL)</th><th>Diabetes-Type</th><th>Status</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Phone</th><th>Email</th></tr></thead><tbody>" +
+        data
+          .map(
+            (row) => `
+            <tr>
+              <td>${row.date}</td>
+              <td>${row.reading} mg/dL</td>
+              <td>${row.diabetesType}</td>  
+              <td style="color:${row.color}">${row.status}</td> 
+              <td>${row.name}</td>
+              <td>${row.age}</td>
+              <td>${row.gender}</td>
+              <td>${row.city}</td>
+              <td>${row.phone}</td>
+              <td>${row.email}</td>
+            </tr>`
+          )
+          .join("") +
+        "</tbody></table>"
+      );
+    }
+
+    // Refresh history display from localStorage
     function refreshHistory() {
       const historyBox = document.getElementById("history");
       const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
       historyBox.innerHTML = buildTable(history);
     }
 
+    // Event: Check blood sugar button clicked
     document.getElementById("checkBtn").onclick = function () {
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
@@ -141,11 +358,11 @@
         <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
       `;
 
-      const date = new Date().toLocaleString(); // ✅ This line added to fix date
+      const date = new Date().toLocaleString();
 
       const entry = {
         date,
-        diabetesType: diabetesType, // <--- add this
+        diabetesType: diabetesType,
         name: name || "-",
         age: age || "-",
         gender: gender || "-",
@@ -154,52 +371,56 @@
         email: email || "-",
         reading: converted.toFixed(1),
         status: suggestion.label,
-        color: suggestion.color
+        color: suggestion.color,
       };
 
       saveToLocal(entry);
       refreshHistory();
     };
 
+    // Download history CSV
     document.getElementById("downloadCsv").onclick = function () {
       const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
-      if(history.length === 0) {
+      if (history.length === 0) {
         alert("No data to download.");
         return;
       }
       const csv = [
-        ["Date","Reading (mg/dL)","Diabetes-Type","Status","Name","Age","Gender","City","Phone","Email"],
-        ...history.map(row => [
+        ["Date", "Reading (mg/dL)", "Diabetes-Type", "Status", "Name", "Age", "Gender", "City", "Phone", "Email"],
+        ...history.map((row) => [
           `"${row.date}"`,
           `"${row.reading} mg/dL"`,
           `"${row.diabetesType}"`,
-           `"${row.status}"`,
+          `"${row.status}"`,
           `"${row.name}"`,
           `"${row.age}"`,
           `"${row.gender}"`,
           `"${row.city}"`,
           `"${row.phone}"`,
-          `"${row.email}"`
-         
-        ])
-      ].map(r => r.join(",")).join("\n");
-      const blob = new Blob([csv], { type: 'text/csv' });
+          `"${row.email}"`,
+        ]),
+      ]
+        .map((r) => r.join(","))
+        .join("\n");
+
+      const blob = new Blob([csv], { type: "text/csv" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
-      a.download = 'blood_sugar_history.csv';
+      a.download = "blood_sugar_history.csv";
       a.click();
       URL.revokeObjectURL(url);
     };
 
     // Print functionality
-    const printResults = document.getElementById('printResults');
-     printResults.addEventListener('click', () => {
+    const printResults = document.getElementById("printResults");
+    printResults.addEventListener("click", () => {
       window.print();
-     });
-   
+    });
+
     // On page load show last 100 checks automatically
     refreshHistory();
   </script>
 </body>
+
 </html>
