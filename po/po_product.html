@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="pl" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produkt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_product.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="navLinks">
+        <li><a href="po_index.html">Strona główna</a></li>
+        <li><a href="po_product.html" class="active">Produkt</a></li>
+        <li><a href="po_about.html">Informacje</a></li>
+        <li><a href="po_contact.html">Kontakt</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Język ▼</a>
+          <div class="dropdown-content">
+            <a href="../tools/product.html">Angielski</a>
+            <a href="../Ku/ku_product.html">Kurdyjski</a>
+            <a href="../ar/ar_product.html">Arabski</a>
+            <a href="../fr/fr_product.html">Francuski</a>
+            <a href="../sp/sp_product.html">Hiszpański</a>
+            <a href="../it/it_product.html">Włoski</a>
+            <a href="../ch/ch_product.html">Chiński</a>
+            <a href="../ge/ge_product.html">Niemiecki</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <p>Zapoznaj się z naszą ofertą produktów zaprojektowanych, aby poprawić Twoje zdrowie.</p>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="../img/BloodTypeCompatibility.PNG" alt="Product 1">
+        <h2>🩸 Produkt 1: Zestaw do badania zgodności grup krwi</h2>
+        <p>Ten łatwy w użyciu zestaw pomaga określić grupę krwi i zrozumieć zgodność w przypadku donacji krwi i
+          transfuzji.
+          Idealny dla osób dbających o zdrowie, rodzin lub do celów edukacyjnych, jest cennym narzędziem dla każdego,
+          kto
+          chce dowiedzieć się więcej o swoim zdrowiu.
+        </p>
+        <a href="https://blood-type2025.vercel.app/">Zobacz szczegóły</a>
+
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodPressureChecker.PNG" alt="Product 2">
+        <h2>🩺 Produkt 2: Cyfrowy ciśnieniomierz</h2>
+        <p> Niezawodne i łatwe w obsłudze urządzenie zaprojektowane, aby pomóc Ci monitorować ciśnienie krwi w domu.
+          Idealne do codziennego monitorowania stanu zdrowia, zapewnia dokładne odczyty i wspiera wczesne wykrywanie
+          potencjalnych
+          problemów.
+          Idealne dla osób kontrolujących nadciśnienie lub dla każdego, kto dba o zdrowie serca.</p>
+        <a href="https://blood-pressure20.vercel.app/index.html">Zobacz szczegóły</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodSugarMonitor.PNG" alt="Product 3">
+        <h2>🧪 Produkt 3: Cyfrowy monitor poziomu cukru we krwi</h2>
+        <p>Niezawodne i łatwe w użyciu urządzenie zaprojektowane do monitorowania poziomu cukru we krwi w domu. Idealne
+          do codziennego śledzenia stanu zdrowia, zapewnia dokładne pomiary i wspiera wczesne wykrywanie potencjalnych
+          problemów związanych z cukrzycą. Doskonałe dla osób zarządzających cukrzycą lub każdego, kto koncentruje się
+          na utrzymaniu zrównoważonego poziomu glukozy we krwi.
+        </p>
+        <a href="https://blood-sugar30.vercel.app/">Zobacz szczegóły</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/VitaminHealthHelper.PNG" alt="Product 4">
+        <h2>🌿 Produkt 4: Witaminowy Pomocnik Zdrowia</h2>
+        <p> Inteligentne i interaktywne narzędzie, które pomaga zidentyfikować i odzyskać równowagę po niedoborach
+          witamin w oparciu o Twój styl życia, objawy i nawyki. Oferuje spersonalizowane porady, w tym sugestie
+          dotyczące żywności, wskazówki dotyczące ekspozycji na słońce oraz plany ćwiczeń, aby naturalnie poprawić Twoje
+          zdrowie. Idealne dla każdego, kto chce utrzymać optymalne samopoczucie poprzez zrównoważoną dietę i codzienną
+          dbałość o zdrowie.
+        </p>
+        <a href="https://vitamin-health25.vercel.app/">Zobacz szczegóły</a>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer>
+<p>Utworzone przez <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+<p>Ostatnia aktualizacja: czerwiec 2025</p>
+&copy; <a class="border-bottom" href="index.html">Kontroler ciśnienia krwi</a>, Wszelkie prawa zastrzeżone.
+Zaprojektowane przez <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+</p>
+</footer>
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_product.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="navLinks">
+        <li><a href="sp_index.html">Hogar</a></li>
+        <li><a href="sp_product.html" class="active">Producir</a></li>
+        <li><a href="sp_about.html">Acerca de</a></li>
+        <li><a href="sp_contact.html">Contacto</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropbtn">Lenguaje ▼</a>
+          <div class="dropdown-content">
+                <a href="../tools/product.html">Inglesa</a>
+               <a href="../Ku/ku_product.html">Kurda</a>
+               <a href="../ar/ar_product.html">Arabic</a>
+               <a href="../fr/fr_product.html">Francesa</a>
+               <a href="../po/po_product.html">Polaca</a>
+               <a href="../it/it_product.html">Italiana</a>
+               <a href="../ch/ch_product.html">Chinese</a>
+               <a href="../ge/ge_product.html">German</a>
+           </div>
+    </li>
+      </ul>
+    </nav>
+  </header>
+ <div class="container">
+    <p>Explore nuestra gama de productos diseñados para mejorar su salud.</p>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="../img/BloodTypeCompatibility.PNG" alt="Product 1">
+        <h2>🩸 Producto 1: Kit de compatibilidad de tipos de sangre</h2>
+        <p>Este kit fácil de usar le ayuda a determinar su tipo de sangre y a comprender la compatibilidad para
+          donaciones y transfusiones.
+          Ideal para personas y familias preocupadas por su salud, o para uso educativo, es una herramienta valiosa para
+          quienes desean aprender más sobre su salud.
+        </p>
+        <a href="https://blood-type2025.vercel.app/">Ver detalles</a>
+
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodPressureChecker.PNG" alt="Product 2">
+        <h2>🩺 Producto 2: Monitor digital de presión arterial</h2>
+        <p> Un dispositivo confiable y fácil de usar, diseñado para ayudarte a controlar tu presión arterial en casa.
+          Ideal para el seguimiento diario de la salud, proporciona lecturas precisas y facilita la detección temprana
+          de posibles problemas.
+          Perfecto para quienes controlan la hipertensión o se preocupan por la salud cardíaca.</p>
+        <a href="https://blood-pressure20.vercel.app/index.html">Ver detalles</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodSugarMonitor.PNG" alt="Product 3">
+        <h2>🧪 Producto 3: Monitor Digital de Glucosa en Sangre</h2>
+        <p>Un dispositivo confiable y fácil de usar diseñado para ayudarte a monitorear tus niveles de azúcar en la
+          sangre en casa. Ideal para el seguimiento diario de la salud, proporciona lecturas precisas y apoya la
+          detección temprana de problemas potenciales relacionados con la diabetes. Perfecto para personas que manejan
+          la diabetes o cualquier persona enfocada en mantener niveles de glucosa en sangre equilibrados.
+        </p>
+        <a href="https://blood-sugar30.vercel.app/">Ver detalles</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/VitaminHealthHelper.PNG" alt="Product 4">
+        <h2>🌿 Producto 4: Ayudante de Salud Vitamínica</h2>
+        <p> Una herramienta inteligente e interactiva que te ayuda a identificar y recuperarte de las deficiencias de
+          vitaminas basándote en tu estilo de vida, síntomas y hábitos. Ofrece consejos personalizados que incluyen
+          sugerencias de alimentos, consejos sobre la exposición al sol y rutinas de ejercicio para aumentar tu salud de
+          manera natural. Ideal para cualquier persona que busque mantener un bienestar óptimo a través de una nutrición
+          equilibrada y bienestar diario.
+        </p>
+        <a href="https://vitamin-health25.vercel.app/">Ver detalles</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Footer -->
+<footer>
+<p>Creado por <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+<p>Última actualización: junio de 2025</p>
+<a class="border-bottom" href="index.html">Presiometro</a>. Todos los derechos reservados.
+Diseñado por <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+</p>
+</footer>
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>

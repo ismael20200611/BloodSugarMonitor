@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informacje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"> <img src="../img/logo.PNG" alt="Logo" class="logo" /></a>
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="po_index.html">Strona główna</a></li>
+        <li><a href="po_product.html">Produkt</a></li>
+        <li><a href="po_about.html" class="active">Informacje</a></li>
+        <li><a href="po_contact.html">Kontakt</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Język ▼</a>
+          <div class="dropdown-content">
+            <a href="../tools/about.html">Angielski</a>
+            <a href="../Ku/ku_about.html">Kurdyjski</a>
+            <a href="../ar/ar_about.html">Arabski</a>
+            <a href="../fr/fr_about.html">Francuski</a>
+            <a href="../sp/sp_about.html">Hiszpański</a>
+            <a href="../it/it_about.html">Włoski</a>
+            <a href="../ch/ch_about.html">Chiński</a>
+            <a href="../ge/ge_about.html">Niemiecki</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container" style="margin: auto; margin-top: 30px;">
+    <h1>O nas</h1>
+
+    <p>Witamy w Blood Pressure Checker, Twoim narzędziu do monitorowania i zrozumienia poziomu ciśnienia krwi.
+
+      Naszą misją jest zapewnienie osobom wiedzy i narzędzi, których potrzebują, aby skutecznie zarządzać swoim
+      zdrowiem.
+    <h2>Odniesienia akademickie i trafność</h2>
+    <p>
+      Ten projekt został zaprojektowany tak, aby był zgodny ze światowymi standardami w zakresie monitorowania zdrowia
+      cyfrowego. Logika i struktura
+      są zgodne z powszechnie akceptowanymi progami medycznymi zalecanymi przez takie instytucje, jak
+      <a href="https://www.who.int/" target="_blank">Światowa Organizacja Zdrowia (WHO)</a> i
+      <a href="https://www.heart.org/" target="_blank">Amerykańskie Towarzystwo Kardiologiczne (AHA)</a>.
+      Ten system może być odpowiedni do demonstracji edukacyjnych, prototypów technologii medycznych lub
+      rozpowszechniania badań w zakresie
+      informatyki medycznej cyfrowej, w tym konferencji takich jak
+      <a href="https://www.embs.org/" target="_blank">IEEE EMBS</a> i
+      <a href="https://www.jmir.org/" target="_blank">JMIR</a>.
+    </p>
+    <h2>Funkcje</h2>
+    <ul>
+      <li>Łatwy w użyciu interfejs do szybkich pomiarów ciśnienia krwi</li>
+      <li>Monitorowanie w czasie rzeczywistym i śledzenie danych historycznych</li>
+      <li>Konfigurowalne alerty dotyczące nieprawidłowych odczytów</li>
+      <li>Zasoby edukacyjne dotyczące zarządzania ciśnieniem krwi</li>
+      <li>Bezpieczne przechowywanie danych i ochrona prywatności</li>
+    </ul>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>Utworzone przez <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Ostatnia aktualizacja: czerwiec 2025</p>
+    &copy; <a class="border-bottom" href="index.html">Kontroler ciśnienia krwi</a>, Wszelkie prawa zastrzeżone.
+    Zaprojektowane przez <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>

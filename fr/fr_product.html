@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_product.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="navLinks">
+        <li><a href="fr_index.html">Maison</a></li>
+        <li><a href="fr_product.html" class="active">Produire</a></li>
+        <li><a href="fr_about.html">À propos</a></li>
+        <li><a href="fr_contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Langue ▼</a>
+          <div class="dropdown-content">
+            <a href="../tools/product.html">Anglais</a>
+            <a href="../Ku/ku_product.html">Kurde</a>
+            <a href="../ar/ar_product.html">Arabe</a>
+            <a href="../sp/sp_product.html">Espagnole</a>
+            <a href="../po/po_product.html">polonais</a>
+            <a href="../it/it_product.html">Italienne</a>
+            <a href="../ch/ch_product.html">Chinoise</a>
+            <a href="../ge/ge_product.html">Allemande</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <p>Découvrez notre gamme de produits conçus pour améliorer votre santé.</p>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="../img/BloodTypeCompatibility.PNG" alt="Product 1">
+        <h2>🩸 Produit 1 : Kit de compatibilité des groupes sanguins</h2>
+        <p>Ce kit facile à utiliser vous aide à déterminer votre groupe sanguin et à comprendre la compatibilité pour
+          les dons et les transfusions sanguines. Idéal pour les personnes soucieuses de leur santé, les familles ou à
+          des fins éducatives, c'est un outil précieux pour quiconque souhaite en savoir plus sur sa santé.
+        </p>
+        <a href="https://blood-type2025.vercel.app/">Voir les détails</a>
+
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodPressureChecker.PNG" alt="Product 2">
+        <h2>🩺 Produit 2 : Tensiomètre numérique</h2>
+        <p>Un appareil fiable et facile à utiliser, conçu pour vous aider à surveiller votre tension artérielle à
+          domicile.
+          Idéal pour le suivi quotidien de votre santé, il fournit des mesures précises et permet une détection précoce
+          des problèmes potentiels.
+          Parfait pour les personnes souffrant d'hypertension ou soucieuses de leur santé cardiaque.</p>
+        <a href="https://blood-pressure20.vercel.app/index.html">Voir les détails</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodSugarMonitor.PNG" alt="Product 3">
+        <h2>🧪 Produit 3 : Moniteur numérique de la glycémie</h2>
+        <p>Un appareil fiable et facile à utiliser conçu pour vous aider à surveiller votre taux de sucre dans le sang à
+          domicile. Idéal pour le suivi quotidien de la santé, il fournit des lectures précises et soutient la détection
+          précoce de problèmes potentiels liés au diabète. Parfait pour les personnes gérant le diabète ou pour
+          quiconque axé sur le maintien de niveaux de glucose sanguin équilibrés.
+        </p>
+        <a href="https://blood-sugar30.vercel.app/">Voir les détails</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/VitaminHealthHelper.PNG" alt="Product 4">
+        <h2>🌿 Produit 4 : Aide à la santé des vitamines</h2>
+        <p> Un outil intelligent et interactif qui vous aide à identifier et à récupérer des carences en vitamines en
+          fonction de votre mode de vie, de vos symptômes et de vos habitudes. Il offre des conseils personnalisés, y
+          compris des suggestions alimentaires, des conseils sur l'exposition au soleil et des routines d'exercice pour
+          améliorer naturellement votre santé. Idéal pour quiconque cherchant à maintenir un bien-être optimal grâce à
+          une nutrition équilibrée et un bien-être quotidien.
+        </p>
+        <a href="https://vitamin-health25.vercel.app/">Voir les détails</a>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>Créé par <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Dernière mise à jour : juin 2025</p>
+    &copy; <a class="border-bottom" href="index.html">Contrôleur de la pression artérielle</a>, Tous droits réservés. Conçu par<a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>

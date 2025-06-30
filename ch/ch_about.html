@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>阿拉伯</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"> <img src="../img/logo.PNG" alt="Logo" class="logo" /></a>
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="ch_index.html">家</a></li>
+        <li><a href="ch_product.html">生产</a></li>
+        <li><a href="ch_about.html" class="active">关于</a></li>
+        <li><a href="ch_contact.html">接触</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">语言 ▼</a>
+          <div class="dropdown-content">
+            <a href="../tools/about.html">英语</a>
+            <a href="../Ku/ku_about.html">库尔德</a>
+            <a href="../ar/ar_about.html">阿拉伯</a>
+            <a href="../fr/fr_about.html">法语</a>
+            <a href="../sp/sp_about.html">西班牙语</a>
+            <a href="../po/po_about.html">抛光</a>
+            <a href="../it/it_about.html">意大利语</a>
+            <a href="../ge/ge_about.html">德语</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container" style="margin: auto; margin-top: 30px;">
+    <h1>关于我们</h1>
+
+    <p>欢迎使用血压检查器，它是您监测和了解血压水平的首选工具。
+      我们的使命是帮助人们获得有效管理健康所需的知识和工具。
+    <h2>学术参考与相关性</h2>
+    <p>
+      本项目旨在与数字健康监测的全球标准接轨。其逻辑和结构遵循世界卫生组织 (WHO) 和美国心脏协会 (AHA) 等机构推荐的广泛接受的医学阈值。
+      该系统可能适用于教育演示、健康技术原型或数字健康信息学领域的研究传播，包括诸如
+      <a href="https://www.embs.org/" target="_blank">IEEE EMBS</a> 和
+      <a href="https://www.jmir.org/" target="_blank">JMIR</a> 等会议。
+    </p>
+    <h2>功能</h2>
+    <ul>
+      <li>易于使用的界面，可快速检查血压</li>
+      <li>实时监测和历史数据跟踪</li>
+      <li>可自定义的异常读数警报</li>
+      <li>血压管理教育资源</li>
+      <li>安全的数据存储和隐私保护</li>
+    </ul>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>由 <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a> 创建</p>
+    <p>上次更新时间：2025 年 6 月</p>
+    &copy; <a class="border-bottom" href="index.html">血压检查器</a>，保留所有权利。
+    由 <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a> 设计
+    </p>
+  </footer>
+
+</body>
+
+</html>

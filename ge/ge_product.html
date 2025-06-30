@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produkt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style_product.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="navLinks">
+        <li><a href="ge_index.html">Startseite</a></li>
+        <li><a href="ge_product.html" class="active">Produkt</a></li>
+        <li><a href="ge_about.html">Über uns</a></li>
+        <li><a href="ge_contact.html">Kontakt</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Sprache ▼</a>
+          <div class="dropdown-content">
+            <a href="../tools/product.html">Englisch</a>
+            <a href="../Ku/ku_product.html">Kurdisch</a>
+            <a href="../ar/ar_product.html">Arabisch</a>
+            <a href="../fr/fr_product.html">Französisch</a>
+            <a href="../sp/sp_product.html">Spanisch</a>
+            <a href="../po/po_product.html">Polnisch</a>
+            <a href="../it/it_product.html">Italienisch</a>
+            <a href="../ch/ch_product.html">Chinesisch</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <p>Entdecken Sie unser Produktsortiment zur Verbesserung Ihrer Gesundheit.</p>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="../img/BloodTypeCompatibility.PNG" alt="Product 1">
+        <h2>🩸 Produkt 1: Blutgruppenkompatibilitäts-Kit</h2>
+        <p>Dieses benutzerfreundliche Testkit hilft Ihnen, Ihre Blutgruppe zu bestimmen und die Verträglichkeit für
+          Blutspenden und -transfusionen zu verstehen.
+          Es ist ideal für gesundheitsbewusste Einzelpersonen, Familien oder für den Einsatz in der Bildung und ein
+          wertvolles Hilfsmittel für alle, die mehr über ihre Gesundheit erfahren möchten.
+        </p>
+        <a href="https://blood-type2025.vercel.app/">Details anzeigen</a>
+
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodPressureChecker.PNG" alt="Product 2">
+        <h2>🩺 Produkt 2: Digitales Blutdruckmessgerät</h2>
+        <p> Ein zuverlässiges und benutzerfreundliches Gerät zur Überwachung Ihres Blutdrucks zu Hause.
+          Ideal für die tägliche Gesundheitsüberwachung, liefert es genaue Messwerte und unterstützt die Früherkennung
+          potenzieller Probleme.
+          Perfekt für Menschen mit Bluthochdruck oder alle, die Wert auf ihre Herzgesundheit legen.</p>
+        <a href="https://blood-pressure20.vercel.app/index.html">Details anzeigen</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/BloodSugarMonitor.PNG" alt="Product 3">
+        <h2>🧪 Produkt 3: Digitales Blutzuckermessgerät</h2>
+        <p>Ein zuverlässiges und benutzerfreundliches Gerät, das Ihnen hilft, Ihre Blutzuckerspiegel zu Hause zu
+          überwachen. Ideal für die tägliche Gesundheitsüberwachung bietet es genaue Messwerte und unterstützt die
+          frühzeitige Erkennung potenzieller Probleme im Zusammenhang mit Diabetes. Perfekt für Personen, die Diabetes
+          managen, oder für jeden, der sich auf die Aufrechterhaltung eines ausgewogenen Blutzuckerspiegels
+          konzentriert.
+        </p>
+        <a href="https://blood-sugar30.vercel.app/">Details anzeigen</a>
+      </div>
+      <div class="product-item">
+        <img src="../img/VitaminHealthHelper.PNG" alt="Product 4">
+        <h2>🌿 Produkt 4: Vitamin Gesundheitshelfer</h2>
+        <p> Ein intelligentes und interaktives Tool, das Ihnen hilft, Vitaminmangel basierend auf Ihrem Lebensstil,
+          Ihren Symptomen und Gewohnheiten zu identifizieren und zu beheben. Es bietet personalisierte Ratschläge,
+          einschließlich Nahrungsmittelsuggestionen, Tipps zur Sonnenexposition und Trainingsroutinen, um Ihre
+          Gesundheit auf natürliche Weise zu fördern. Ideal für alle, die durch ausgewogene Ernährung und tägliches
+          Wohlbefinden ein optimales Wohlbefinden aufrechterhalten möchten.
+        </p>
+        <a href="https://vitamin-health25.vercel.app/">Details anzeigen</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>Erstellt von <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Letzte Aktualisierung: Juni 2025</p>
+    &copy; <a class="border-bottom" href="index.html">Blutdruckmessgerät</a>, Alle Rechte vorbehalten.
+    Design von <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>
