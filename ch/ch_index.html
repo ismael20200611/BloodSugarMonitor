@@ -1,132 +1,122 @@
 <!DOCTYPE html>
-<html lang="es-ES" dir="ltr">
+<html lang="ku" dir="rtl">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>血压检查器</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-    <script src="../js/script.js" defer></script>
-    <style>
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Sugar Monitor & Guidance 🩺</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="js/script.js"></script>
 </head>
 
 <body>
-    <!-- Header with Logo -->
-    <header>
-        <nav>
-            <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
-            <!-- Hamburger toggle for mobile -->
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-            <ul id="navLinks">
-                <li><a href="ch_index.html" class="active">家</a></li>
-                <li><a href="ch_product.html">生产</a></li>
-                <li><a href="ch_about.html">关于</a></li>
-                <li><a href="ch_contact.html">接触</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">语言 ▼</a>
-                    <div class="dropdown-content">
-                        <a href="../index.html">英语</a>
-                        <a href="../Ku/ku_index.html">库尔德语</a>
-                        <a href="../ar/ar_index.html">阿拉伯语</a>
-                        <a href="../fr/fr_index.html">法语</a>
-                        <a href="../sp/sp_index.html">西班牙语</a>
-                        <a href="../po/po_index.html">波兰语</a>
-                        <a href="../it/it_index.html">意大利语</a>
-                        <a href="../ge/ge_index.html">德语</a>
-                    </div>
-                </li>
-            </ul>
+      <ul id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Language ▼</a>
+          <div class="dropdown-content">
+            <a href="../index.html">English</a>
+            <a href="../ar/ar_index.html">Arabic</a>
+            <a href="../fr/fr_index.html">French</a>
+            <a href="../sp/sp_index.html">Spanish</a>
+            <a href="../po/po_index.html">Polish</a>
+            <a href="../it/it_index.html">Italian</a>
+            <a href="../ch/ch_index.html">Chinese</a>
+            <a href="../ge/ge_index.html">German</a>
+           
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-        </nav>
-    </header>
+  <div class="container">
+    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
+    <div id="dateTimeDisplay"> Loading current time...</div>
 
-    <div class="container">
-        <h1>血压检测器</h1>
-        <p>检查您的血压并获得即时反馈。</p>
-        <p>在下面输入您的详细信息：</p>
-        <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name  - 全名 " />
-            <input type="number" id="age" placeholder="Age - 年龄" min="1" />
-            <select id="gender">
-                <option value="male">男性</option>
-                <option value="female">女性</option>
-            </select>
+    <input type="text" id="fullName" placeholder="Full Name (optional)" />
+    <input type="number" id="age" placeholder="Age (optional)" />
+    <select id="gender">
+      <option value="">Gender (optional)</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <input type="text" id="city" placeholder="City (optional)" />
+    <input type="text" id="phone" placeholder="Phone Number (optional)" />
+    <input type="email" id="email" placeholder="Email (optional)" />
 
-        </div>
-        <div class="product-list">
-            <div class="product-item1">
-                <img src="../img/device.png" alt="Product 1">
-            </div>
-            <div class="product-item2">
-                <div class="input-group">
-                    <input type="number" id="systolic" placeholder="Systolic" />
-                    <input type="number" id="diastolic" placeholder="Diastolic" />
-                    <input type="number" id="pulse" placeholder="❤ Pulse" />
-                </div>
-            </div>
-        </div>
+    <select id="diabetesType" required>
+      <option value="none">-- Select Diabetes Type --</option>
+      <option value="non_diabetic">Normal (No Diabetes)</option>
+      <option value="type1">Type 1 Diabetes</option>
+      <option value="type2">Type 2 Diabetes</option>
+      <option value="gestational">Gestational Diabetes</option>
+      <option value="prediabetes">Pre-diabetes</option>
+    </select>
+
+    <select id="unit">
+      <option value="mgdl">mg/dL</option>
+      <option value="mmol">mmol/L</option>
+    </select>
+
+    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
+    <button  id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
+    <button  id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
+    <button  id="printResults" class="sound-Jazak">🖨️ Print Results</button>
 
 
-        <div id="dateTimeDisplay"> 正在加载当前时间...</div>
 
-        <button onclick="checkBP()" class="sound-Jazak"> 检查血压</button>
 
-        <div id="result"></div>
+    <div id="result" style="display:none;"></div>
 
-        <!-- Danger buttons hidden by default -->
-        <button class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨
-            现在该做什么？</button>
-        <!-- Add this div below the buttons -->
-        <div id="helpGuide" style="display:none; 
-  margin-top: 15px; 
-  max-width: 600px; 
-  background: #fff3f3; 
-  border: 1px solid #e55353; 
-  color: #a94442; 
-  padding: 15px; 
-  border-radius: 8px; 
-  text-align: right;">
-            <strong>🚨 现在该做什么？</strong>
-            <ul>
-                <li>保持冷静，帮助对方坐得舒适。</li>
-                <li>放松任何紧身衣物。</li>
-                <li>鼓励慢慢、深深地呼吸。</li>
-                <li>如有处方，给予紧急降压药。</li>
-                <li>不要给予咖啡因或兴奋剂。</li>
-                <li>保持他们警觉并坐直。</li>
-                <li>拨打911，并在帮助到达之前陪着他们。</li>
-            </ul>
-        </div>
-        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 语音指导</button>
-
-        <button onclick="downloadCSV()" class="sound-Jazak">📥 下载 CSV</button>
-        <button onclick="window.print()" class="sound-Jazak">🖨️ 打印结果</button>
-
-        <div class="history">
-            <h3>📜 最近100次检查:</h3>
-            <ul id="historyList"></ul>
-        </div>
-
-        <div class="description">
-            <strong>血压指南:</strong> 正常范围因年龄和性别而异。请定期检查，如果超出范围，请咨询医生。
-        </div>
-
-    </div>
+    <h3>📜 Last 100 Checks</h3>
+    <div id="history"></div>
+    
+    <div class="disclaimer">
+      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
+        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
+        diagnosis and management of blood sugar or diabetes.</p>
+      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+          href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
+          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+      <div style="color: red;">
+        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
+        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
+        it is important to note that this tool is not a substitute for professional medical advice or treatment.
+        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        <br />
+        <br />
+        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
+        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        <br />
+        <br />
+        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+      </div>
     </div>
 
+  </div>
 
 
-    <!-- 
+
+
+
+  <!-- 
     BONUS TIPS:
     1. Visit https://simpleicons.org for more icons
     2. Use the target="_blank" attribute on a link to open it in a new tab
@@ -136,190 +126,327 @@
     <a data-social="Telegram" style="--accent-color: #26A5E4;" href="#"> past in here</svg>
     </a>
   -->
-    <div class="socials-container">
-        <!-- <a data-social="Twitter" style="--accent-color: black;" href="">
+  <div class="socials-container">
+    <!-- <a data-social="Twitter" style="--accent-color: black;" href="">
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
     </a> -->
-        <!-- <a data-social="YouTube" style="--accent-color: red;" href="">
+    <!-- <a data-social="YouTube" style="--accent-color: red;" href="">
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
     </a> -->
-        <!-- <a data-social="Instagram" style="--accent-color: #fe107c;" href="#">
+    <!-- <a data-social="Instagram" style="--accent-color: #fe107c;" href="#">
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
     </a> -->
-        <!-- <a data-social="TikTok" style="--accent-color: #38142a;" href="#">
+    <!-- <a data-social="TikTok" style="--accent-color: #38142a;" href="#">
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
     </a> -->
-        <a data-social="Facebook" style="--accent-color: #106bff;"
-            href="https://www.facebook.com/profile.php?id=61577374810953">
-            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Facebook</title>
-                <path
-                    d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
-            </svg>
-        </a>
-        <a data-social="Telegram" style="--accent-color: #26A5E4;" href="https://t.me/+gExgbtO61vBkYmRi"><svg role="img"
-                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Telegram</title>
-                <path
-                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-            </svg></svg>
-        </a>
-        <!-- </a>
+    <a data-social="Facebook" style="--accent-color: #106bff;"
+      href="https://www.facebook.com/profile.php?id=61577374810953">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <title>Facebook</title>
+        <path
+          d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+      </svg>
+    </a>
+    <a data-social="Telegram" style="--accent-color: #26A5E4;" href="https://t.me/+gExgbtO61vBkYmRi"><svg role="img"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <title>Telegram</title>
+        <path
+          d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+      </svg></svg>
+    </a>
+    <!-- </a>
     <a data-social="Telegram" style="--accent-color: #26A5E4;" href="#"></svg>
     </a> -->
-    </div>
-    <!-- Footer -->
-    <footer>
-        <p>由 <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a> 创建</p>
-        <p>上次更新时间：2025 年 6 月</p>
-        &copy; <a class="border-bottom" href="index.html">血压检查器</a>，保留所有权利。
-        由 <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a> 设计
-        </p>
-    </footer>
+  </div>
 
-    <script>
-        // Update the date/time display every second
-        function updateDateTime() {
-            const now = new Date();
-            const options = {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-            };
-            document.getElementById("dateTimeDisplay").textContent = " " + now.toLocaleString(undefined, options);
-        }
-        setInterval(updateDateTime, 1000);
-        updateDateTime(); // initial call
+  <!-- Footer -->
+  <footer>
+    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Last updated: July 2025</p>
+    <p>
+      &copy; <a class="border-bottom" href="">Blood Sugar Monitor</a>, All Right Reserved.<br />
+      Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
+  </footer>
 
-        function checkBP() {
-            const fullName = document.getElementById('fullName').value.trim();
-            const sys = parseInt(document.getElementById('systolic').value);
-            const dia = parseInt(document.getElementById('diastolic').value);
-            const pulse = parseInt(document.getElementById('pulse').value);
-            const gender = document.getElementById('gender').value;
-            const age = parseInt(document.getElementById('age').value);
+  <script>
+    // Toggle menu functionality
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("show");
+    }
 
-            const result = document.getElementById('result');
-            const helpBtn = document.getElementById('helpButton');
-            const speakBtn = document.getElementById('speakButton');
+    // Update the date/time display every second
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      };
+      document.getElementById("dateTimeDisplay").textContent = " " + now.toLocaleString(undefined, options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
 
-            // Validate inputs
-            if (!fullName || isNaN(sys) || isNaN(dia) || isNaN(pulse) || isNaN(age)) {
-                result.textContent = "请正确填写所有字段。";
-                result.className = 'danger';
-                helpBtn.style.display = 'none';
-                speakBtn.style.display = 'none';
-                return;
-            }
+    // Suggestion logic based on reading and diabetes type
+    function getSuggestions(reading, type) {
+      let thresholds;
 
-            // Save the record with current time
-            const currentTime = new Date().toLocaleString();
-            saveHistory({ fullName, sys, dia, pulse, gender, age, time: currentTime });
+      switch (type) {
+        case "non_diabetic":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 180,
+          };
+          break;
 
-            // Determine BP status
-            let dangerHigh = sys >= 180 || dia >= 120;
-            let dangerLow = sys < 80 || dia < 50;
-            let normal = (sys >= 90 && sys <= 130) && (dia >= 60 && dia <= 85);
+        case "type1":
+        case "type2":
+          thresholds = {
+            hypoglycemia: 80,
+            normalLow: 80,
+            normalHigh: 130,
+            prediabetesHigh: 180,
+            diabetesHigh: 300,
+          };
+          break;
 
-            if (dangerHigh) {
-                result.textContent = "❗ 危险得很！立即拨打911！";
-                result.className = 'danger';
-                helpBtn.style.display = 'inline-block';
-                speakBtn.style.display = 'inline-block';
-            } else if (dangerLow) {
-                result.textContent = "❗ 危险低下！请寻求医疗帮助。";
-                result.className = 'danger';
-                helpBtn.style.display = 'inline-block';
-                speakBtn.style.display = 'inline-block';
-            } else if (!normal) {
-                result.textContent = "⚠️ 血压略高于正常范围。";
-                result.className = 'danger';
-                helpBtn.style.display = 'none';
-                speakBtn.style.display = 'none';
-            } else {
-                result.textContent = "✅ 血压在正常范围内。";
-                result.className = 'normal';
-                helpBtn.style.display = 'none';
-                speakBtn.style.display = 'none';
-            }
-        }
+        case "gestational":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 95,
+            prediabetesHigh: 135,
+            diabetesHigh: 200,
+          };
+          break;
 
-        // Save to localStorage and keep only last 10
-        function saveHistory(entry) {
-            let history = JSON.parse(localStorage.getItem("bpHistory")) || [];
-            history.unshift(entry);
-            history = history.slice(0, 100);
-            localStorage.setItem("bpHistory", JSON.stringify(history));
-            displayHistory();
-        }
+        case "prediabetes":
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 180,
+          };
+          break;
 
-        // Display history list
-        function displayHistory() {
-            const history = JSON.parse(localStorage.getItem("bpHistory")) || [];
-            const list = document.getElementById("historyList");
-            list.innerHTML = '';
-            history.forEach((entry, i) => {
-                const li = document.createElement("li");
-                li.textContent = `${i + 1}. ${entry.fullName} → Sys: ${entry.sys}, Dia: ${entry.dia}, Pulse: ${entry.pulse} @ ${entry.time}`;
-                list.appendChild(li);
-            });
-        }
+        default:
+          thresholds = {
+            hypoglycemia: 70,
+            normalLow: 70,
+            normalHigh: 99,
+            prediabetesHigh: 125,
+            diabetesHigh: 300,
+          };
+      }
 
-        // Download history as CSV file
-        function downloadCSV() {
-            const history = JSON.parse(localStorage.getItem("bpHistory")) || [];
-            if (history.length === 0) return alert("No data to download.");
-            const header = ["Full Name", "Systolic", "Diastolic", "Pulse", "Gender", "Age", "Time"];
-            const rows = history.map(e => [e.fullName, e.sys, e.dia, e.pulse, e.gender, e.age, e.time]);
-            const csv = [header, ...rows].map(row => row.join(",")).join("\n");
-            const blob = new Blob([csv], { type: "text/csv" });
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = "bp_readings.csv";
-            a.click();
-        }
+      if (reading < 54) {
+        return {
+          label: "Severe Hypoglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
+          workout: "No exercise. Eat fast-acting sugar and rest.",
+          food: "Drink orange juice, glucose tablets, candies.",
+        };
+      } else if (reading < thresholds.hypoglycemia) {
+        return {
+          label: "Hypoglycemia",
+          color: "#dc3545",
+          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
+          workout: "Avoid workout until stable.",
+          food: "Bananas, apples, honey water, fruit juices.",
+        };
+      } else if (reading <= thresholds.normalHigh) {
+        return {
+          label: "Normal",
+          color: "#198754",
+          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
+          workout: "🏃 Light cardio or walking.",
+          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+        };
+      } else if (reading <= thresholds.prediabetesHigh) {
+        return {
+          label: "Pre-Diabetes",
+          color: "#ffc107",
+          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
+          workout: "🚶 Daily 30 min walks, basic strength exercises.",
+          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+        };
+      } else if (reading <= thresholds.diabetesHigh) {
+        return {
+          label: "Diabetes",
+          color: "#fd7e14",
+          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
+          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
+          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+        };
+      } else {
+        return {
+          label: "Severe Hyperglycemia",
+          color: "#dc3545",
+          message: "❗ Dangerously High! Call 911 immediately!",
+          workout: "❌ No exercise. Seek emergency help.",
+          food: "Drink water, avoid sugar and carbohydrates.",
+        };
+      }
+    }
 
-        // Alert with medical help instructions
-        function showHelp() {
-            const guideDiv = document.getElementById("helpGuide");
-            // Toggle visibility
-            if (guideDiv.style.display === "none") {
-                guideDiv.style.display = "block";
-            } else {
-                guideDiv.style.display = "none";
-            }
-        }
+    // Save entry to localStorage and keep only last 100
+    function saveToLocal(data) {
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      history.unshift(data);
+      localStorage.setItem("sugarHistory", JSON.stringify(history.slice(0, 100)));
+    }
 
-        // Voice guidance with speech synthesis
-        function speakGuide() {
-            const speakBtn = document.getElementById("speakButton");
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-                speakBtn.disabled = false;
-                return;
-            }
-            speakBtn.disabled = true;
+    // Build HTML table for history
+    function buildTable(data) {
+      if (data.length === 0) return "<p>No records yet.</p>";
+      return (
+        "<table><thead><tr><th>Date & Time</th><th>Reading (mg/dL)</th><th>Diabetes-Type</th><th>Status</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Phone</th><th>Email</th></tr></thead><tbody>" +
+        data
+          .map(
+            (row) => `
+            <tr>
+              <td>${row.date}</td>
+              <td>${row.reading} mg/dL</td>
+              <td>${row.diabetesType}</td>  
+              <td style="color:${row.color}">${row.status}</td> 
+              <td>${row.name}</td>
+              <td>${row.age}</td>
+              <td>${row.gender}</td>
+              <td>${row.city}</td>
+              <td>${row.phone}</td>
+              <td>${row.email}</td>
+            </tr>`
+          )
+          .join("") +
+        "</tbody></table>"
+      );
+    }
 
-            const guide = [
+    // Refresh history display from localStorage
+    function refreshHistory() {
+      const historyBox = document.getElementById("history");
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      historyBox.innerHTML = buildTable(history);
+    }
 
-            ];
-            const speech = new SpeechSynthesisUtterance(guide.join(" "));
+    // Event: Check blood sugar button clicked
+    document.getElementById("checkBtn").onclick = function () {
+      const readingInput = document.getElementById("reading");
+      const readingVal = readingInput.value.trim();
+      if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
+        alert("Please enter a valid blood sugar reading.");
+        readingInput.focus();
+        return;
+      }
 
-            speech.onend = () => {
-                speakBtn.disabled = false;
-            };
+      const reading = parseFloat(readingVal);
+      const unit = document.getElementById("unit").value;
+      const name = document.getElementById("fullName").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const gender = document.getElementById("gender").value;
+      const city = document.getElementById("city").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const diabetesType = document.getElementById("diabetesType").value;
 
-            window.speechSynthesis.speak(speech);
-        }
+      if (diabetesType === "none") {
+        alert("Please select a diabetes type.");
+        return;
+      }
 
-    </script>
+      let converted = reading;
+      if (unit === "mmol") {
+        converted = reading * 18;
+      }
 
+      const suggestion = getSuggestions(converted, diabetesType);
+      const resultBox = document.getElementById("result");
+      resultBox.style.display = "block";
+      resultBox.innerHTML = `
+        <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
+        <p>${suggestion.message}</p>
+        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
+        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+      `;
 
+      const date = new Date().toLocaleString();
+
+      const entry = {
+        date,
+        diabetesType: diabetesType,
+        name: name || "-",
+        age: age || "-",
+        gender: gender || "-",
+        city: city || "-",
+        phone: phone || "-",
+        email: email || "-",
+        reading: converted.toFixed(1),
+        status: suggestion.label,
+        color: suggestion.color,
+      };
+
+      saveToLocal(entry);
+      refreshHistory();
+    };
+
+    // Download history CSV
+    document.getElementById("downloadCsv").onclick = function () {
+      const history = JSON.parse(localStorage.getItem("sugarHistory") || "[]");
+      if (history.length === 0) {
+        alert("No data to download.");
+        return;
+      }
+      const csv = [
+        ["Date", "Reading (mg/dL)", "Diabetes-Type", "Status", "Name", "Age", "Gender", "City", "Phone", "Email"],
+        ...history.map((row) => [
+          `"${row.date}"`,
+          `"${row.reading} mg/dL"`,
+          `"${row.diabetesType}"`,
+          `"${row.status}"`,
+          `"${row.name}"`,
+          `"${row.age}"`,
+          `"${row.gender}"`,
+          `"${row.city}"`,
+          `"${row.phone}"`,
+          `"${row.email}"`,
+        ]),
+      ]
+        .map((r) => r.join(","))
+        .join("\n");
+
+      const blob = new Blob([csv], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "blood_sugar_history.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+
+    // Print functionality
+    const printResults = document.getElementById("printResults");
+    printResults.addEventListener("click", () => {
+      window.print();
+    });
+
+    // On page load show last 100 checks automatically
+    refreshHistory();
+  </script>
+  
+  
     <!-- Sound effect for button click -->
-    <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+    <audio id="click-Jazak" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
         preload="auto"></audio>
     <!-- <button class="sound-Jazak">Click Me</button> -->
     <script>
@@ -333,22 +460,6 @@
             });
         });
     </script>
-
-    <!-- Sound effect for button click -->
-    <audio id="click-Voice" src="../sound/ttsMP3.com_help.mp3" preload="auto"></audio>
-    <!-- <button class="Voice-Guidance">Click Me</button> -->
-    <script>
-        const buttons = document.querySelectorAll('.Voice-Guidance');
-        const sound = document.getElementById('click-Voice');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                sound.currentTime = 0;
-                sound.play();
-            });
-        });
-    </script>
-
 
 </body>
 
