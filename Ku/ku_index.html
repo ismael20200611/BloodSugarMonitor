@@ -46,67 +46,66 @@
   </header>
 
   <div class="container">
-    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
+    <h2>چاودێری و ڕێنمایی شەکری خوێن 🩺</h2>
     <div id="dateTimeDisplay"> Loading current time...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="Full Name (optional)- ناوی تەواو (ئارەزوومەندانەیە)" />
+    <input type="number" id="age" placeholder="Age (optional)-تەمەن (ئارەزوومەندانەیە)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">Gender (optional)-ڕەگەز (ئارەزوومەندانەیە)</option>
+      <option value="Male">نێر</option>
+      <option value="Female">مێ</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="City (optional)-شار (ئارەزوومەندانەیە)" />
+    <input type="text" id="phone" placeholder="Phone Number (optional)-ژمارەی تەلەفۆن (ئارەزوومەندانەیە)" />
+    <input type="email" id="email" placeholder="Email (optional)-پۆستی ئەلیکترۆنی (ئارەزوومەندانەیە)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
-      <option value="prediabetes">Pre-diabetes</option>
+      <option value="none">-- Select Diabetes Type -- جۆری شەکرە هەڵبژێرە --</option>
+      <option value="non_diabetic">Normal (No Diabetes)-ئاسایی (شەکرە نییە)</option>
+      <option value="type1">Type 1 Diabetes - شەکرەی جۆری 1</option>
+      <option value="type2">Type 2 Diabetes - شەکرەی جۆری 2</option>
+      <option value="gestational">Gestational Diabetes - شەکرەی دووگیانی</option>
+      <option value="prediabetes">Pre-diabetes - پێش شەکرە</option>
     </select>
 
     <select id="unit">
-      <option value="mgdl">mg/dL</option>
-      <option value="mmol">mmol/L</option>
+      <option value="mgdl">mg/dL - میلیگرام بۆ هەر دیسیلیترێک</option>
+      <option value="mmol">mmol/L - میلیمۆل بۆ هەر لیترێک</option>
     </select>
 
     <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <button id="checkBtn" class="sound-Jazak">پشکنینی شەکری خوێن</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 داگرتن CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ چاپکردنی ئەنجامەکان</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 دوای 100 پشکنین</h3>
     <div id="history"></div>
 
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
-      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+      <p><strong>وازهێنان لە بەرپرسیارێتی:</strong> ئەم ئامرازە تەنها بۆ مەبەستی پەروەردەیی و بەدواداچوونی کەسیی
+        دانراوە. ئەمە جێگرەوەی ئامۆژگاری پزیشکی، دەستنیشانکردن یان چارەسەری پیشەیی نییە. هەمیشە داوای ڕێنمایی پزیشکی بکە
+        بۆ دەستنیشانکردن و بەڕێوەبردنی ئاستی شەکری خوێن یان شەکرە .</p>
+      <p>مەودای شەکری خوێن ئاماژەی پێکراوە لە <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">کۆمەڵەی شەکرەی ئەمریکی (ADA)</a> و <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">ڕێکخراوی تەندروستی جیهانی (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ ئەم ئامرازە بۆ یارمەتیدانت لە بەدواداچوونی ئاستی شەکری خوێن و پێشکەشکردنی ئامۆژگاری گشتی لەسەر بنەمای
+        خوێندنەوەکانت دروستکراوە. چالاکی تەندروست و بژاردەی خۆراک بە گوێرەی ئەو زانیاریانەی کە پێشکەشی دەکەیت پێشنیار
+        دەکات. لەگەڵ ئەوەشدا، زۆر گرنگە تێبگەیت کە ئەم ئامرازە جێگەی ئامۆژگاری پزیشکی یان چارەسەری پیشەیی ناگرێتەوە.
+        هەمیشە داوای ڕێنمایی لە پسپۆڕی تەندروستی بکە بۆ ئامۆژگاری پزیشکی تاکەکەسی و ستراتیجیەکانی چارەسەر.
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ ئەگەر نیشانەی مەترسیداری وەک سەرلێشێواوی، قەتیس بوون یان لەدەستدانی هۆشت هەیە، دەستبەجێ یارمەتی پزیشکی
+        فریاکەوتن وەربگرە. ئەم ئامرازە بۆ دەستنیشانکردن و چارەسەرکردنی هیچ کێشەیەکی پزیشکی نییە.
         <br />
-        <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 ڕاسپاردەکان لەسەر بنەمای فراوان دامەزراون و لەوانەیە بۆ هەموو تاکەکان گونجاو نەبن.
       </div>
     </div>
 
@@ -250,51 +249,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "دابەزینی شەکرەی خوێنی زۆر",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ بەشێوەیەکی مەترسیدار! دەستبەجێ گلوکۆز بەکار بهێنە و پەیوەندی بە فریاگوزاری بکە.",
+          workout: "وەرزش مەکە. شەکری خێرا بخۆ و پشوویەک بدە.",
+          food: "شەربەتی پرتەقاڵ، حەبی گلوکۆز(glucose tablets)، شیرینی بخۆرەوە.",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "دابەزینی شەکری خوێن",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "شەکری خوێن دابەزی شتێکی شیرین بخۆ و لە ماوەی 15 خولەکدا دووبارە ئاستی خۆت بپشکنە.",
+          workout: "خۆت لە وەرزش بەدوور بگرە تاوەکو جێگیر دەبیت.",
+          food: "مۆز، سێو، ئاوی هەنگوین، شەربەتی میوە.",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
-          label: "Normal",
+          label: "ئاسایی",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "شەکری خوێن لە مەودایەکی تەندروستدایە. گرنگە خواردنی هاوسەنگ و ئاوی گونجاو بپارێزیت.",
+          workout: "🏃 کاردیۆی سووک یان ڕۆیشتن.",
+          food: "دانەوێڵە تەواوەکان(Whole grains)، گەڵای سەوز، پرۆتینی بێ چەوری و میوەی تازە وەک توو و سێو.",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "پێش شەکرە",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "کەمێک بەرز بووە. دەست پێکردن یان بەردەوام بوون لە خووی تەندروست، کەمکردنەوەی بەکارهێنانی شەکر.",
+          workout: "🚶 ڕۆژانە 30 خولەک پیاسەکردن و ڕاهێنانی بەهێزی سەرەتایی.",
+          food: "شۆفان(Oats)، پاقلەمەنی، ئاوی دارچین، گوێز و ترشەمەنی.",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
-          label: "Diabetes",
+          label: "نەخۆشی شەکرە",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "بەرزبوونەوەی ئاستی شەکری خوێن. داوای ڕێنمایی پزیشکی بکە بۆ شێوازی ژیان و پلانی چارەسەر.",
+          workout: "🏃 وەرزشی مامناوەند بۆ دڵ ئەنجام بدە. چاودێری ئاستی شەکری خوێنت بکە.",
+          food: "ئەو خۆراکانەی کە ڕیشاڵیان تێدایە وەک گوێز، توو و ئاوی بامیە دەبێت بخورێن، لە کاتێکدا دەبێت دوور بکەونەوە لە خواردنەوە شەکرییەکان.",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "بەرزبوونەوەی ڕێژەی شەکرەی خوێن",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ بە شێوەیەکی مەترسیدار! دەستبەجێ پەیوەندی بە 911 بکە!",
+          workout: "❌ ڕاهێنان قەدەغەیە داوای یارمەتی فریاگوزاری بکە.",
+          food: "ئاو بخۆرەوە، دوورکەوتنەوە لە شەکر و کاربۆهیدرات(carbohydrates).",
         };
       }
     }
@@ -310,7 +309,7 @@
     function buildTable(data) {
       if (data.length === 0) return "<p>No records yet.</p>";
       return (
-        "<table><thead><tr><th>Date & Time</th><th>Reading (mg/dL)</th><th>Diabetes-Type</th><th>Status</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Phone</th><th>Email</th></tr></thead><tbody>" +
+        "<table><thead><tr><th>بەروار و کات</th><th>خوێندنەوە (mg/dL)</th><th>جۆری شەکرە</th><th>دۆخ</th><th>ناو</th><th>تەمەن</th><th>ڕەگەز</th><th>شار</th><th>تەلەفۆن</th><th>پۆستی ئەلیکترۆنی</th></tr></thead><tbody>" +
         data
           .map(
             (row) => `
@@ -344,7 +343,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("تکایە خوێندنەوەی دروستی شەکری خوێن پێشکەش بکە.");
         readingInput.focus();
         return;
       }
@@ -375,9 +374,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>خوێندنەوە:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>چالاکی پێشنیارکراو:</strong> ${suggestion.workout}</p>
+        <p><strong>پێشنیارەکانی خواردن، میوە و شەربەت:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();
@@ -446,7 +445,8 @@
 
 
   <!-- Sound effect for button click -->
-  <audio id="click-Jazak" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3" preload="auto"></audio>
+  <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+    preload="auto"></audio>
   <!-- <button class="sound-Jazak">Click Me</button> -->
   <script>
     const buttonsJazak = document.querySelectorAll('.sound-Jazak');
