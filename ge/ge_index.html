@@ -38,7 +38,7 @@
             <a href="../po/po_index.html">Polish</a>
             <a href="../it/it_index.html">Italian</a>
             <a href="../ch/ch_index.html">Chinese</a>
-           
+
           </div>
         </li>
       </ul>
@@ -75,9 +75,9 @@
     </select>
 
     <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button  id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button  id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button  id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
 
 
 
@@ -86,7 +86,7 @@
 
     <h3>📜 Last 100 Checks</h3>
     <div id="history"></div>
-    
+
     <div class="disclaimer">
       <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
         replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
@@ -161,14 +161,13 @@
 
   <!-- Footer -->
   <footer>
-    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
-    <p>Last updated: July 2025</p>
+    <p>Erstellt von <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Letzte Aktualisierung: Juli 2025</p>
     <p>
-      &copy; <a class="border-bottom" href="">Blood Sugar Monitor</a>, All Right Reserved.<br />
-      Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+      &copy; <a class="border-bottom" href="">Blutzuckermessgerät</a>, Alle Rechte vorbehalten.<br />
+      Design von <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
     </p>
   </footer>
-
   <script>
     // Toggle menu functionality
     function toggleMenu() {
@@ -443,23 +442,23 @@
     // On page load show last 100 checks automatically
     refreshHistory();
   </script>
-  
-  
-    <!-- Sound effect for button click -->
-    <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
-        preload="auto"></audio>
-    <!-- <button class="sound-Jazak">Click Me</button> -->
-    <script>
-        const buttonsJazak = document.querySelectorAll('.sound-Jazak');
-        const soundJazak = document.getElementById('click-Jazak');
 
-        buttonsJazak.forEach(button => {
-            button.addEventListener('click', () => {
-                soundJazak.currentTime = 0;
-                soundJazak.play();
-            });
-        });
-    </script>
+
+  <!-- Sound effect for button click -->
+  <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+    preload="auto"></audio>
+  <!-- <button class="sound-Jazak">Click Me</button> -->
+  <script>
+    const buttonsJazak = document.querySelectorAll('.sound-Jazak');
+    const soundJazak = document.getElementById('click-Jazak');
+
+    buttonsJazak.forEach(button => {
+      button.addEventListener('click', () => {
+        soundJazak.currentTime = 0;
+        soundJazak.play();
+      });
+    });
+  </script>
 
 </body>
 
