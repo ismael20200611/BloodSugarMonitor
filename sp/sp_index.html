@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Sugar Monitor & Guidance 🩺</title>
+  <title>Monitoreo y orientación del nivel de azúcar en sangre 🩺</title>
   <link rel="stylesheet" href="../css/style.css" />
   <script src="../js/script.js"></script>
 </head>
@@ -23,22 +23,22 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="sp_index.html" class="active">Home</a></li>
-        <li><a href="sp_product.html">Product</a></li>
-        <li><a href="sp_about.html">About</a></li>
-        <li><a href="sp_contact.html">Contact</a></li>
+        <li><a href="sp_index.html" class="active">Inicio</a></li>
+        <li><a href="sp_product.html">Producto</a></li>
+        <li><a href="sp_about.html">Acerca de</a></li>
+        <li><a href="sp_contact.html">Contacto</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">Idioma ▼</a>
           <div class="dropdown-content">
-            <a href="../index.html">English</a>
-            <a href="../Ku/ku_index.html">Kurdo</a>
-            <a href="../ar/ar_index.html">Arabic</a>
-            <a href="../fr/fr_index.html">French</a>
-            <a href="../po/po_index.html">Polish</a>
-            <a href="../it/it_index.html">Italian</a>
-            <a href="../ch/ch_index.html">Chinese</a>
-            <a href="../ge/ge_index.html">German</a>
-           
+            <a href="../ index.html"> inglés </a>
+            <a href="../ ku/ku_index.html"> kurdo </a>
+            <a href="../ ar/ar_index.html"> árabe </a>
+            <a href="../ fr/fr_index.html"> francés </a>
+            <a href="../ po/po_index.html"> polaco </a>
+            <a href="../ it/it_index.html"> italiano </a>
+            <a href="../ ch/ch_index.html"> chino </a>
+            <a href="../ ge/ge_index.html"> alemán </a>
+
           </div>
         </li>
       </ul>
@@ -46,26 +46,26 @@
   </header>
 
   <div class="container">
-    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
-    <div id="dateTimeDisplay"> Loading current time...</div>
+    <h2>Monitoreo y orientación del nivel de azúcar en sangre 🩺</h2>
+    <div id="dateTimeDisplay"> Cargando la hora actual...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="Nombre completo (opcional)-Full Name(optional)" />
+    <input type="number" id="age" placeholder="Age (optional)-Age(optional)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">Género (opcional)-Gender(optional)</option>
+      <option value="Male">Masculina-Male</option>
+      <option value="Female">Femenina-Female</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="Ciudad (opcional)-City(optional)" />
+    <input type="text" id="phone" placeholder="Número de teléfono (opcional)-Phone Number(optional)" />
+    <input type="email" id="email" placeholder="Correo electrónico (opcional)-Email(optional)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
+      <option value="none">-- Seleccione el tipo de diabetes--Select Diabetes Type--</option>
+      <option value="non_diabetic">Normal (sin diabetes)-Normal (No Diabetes)</option>
+      <option value="type1">Diabetes tipo 1-Type 1 Diabetes</option>
+      <option value="type2">Diabetes tipo 2-Type 2 Diabetes</option>
+      <option value="gestational">Diabetes gestacional-Gestational Diabetes</option>
       <option value="prediabetes">Pre-diabetes</option>
     </select>
 
@@ -74,39 +74,42 @@
       <option value="mmol">mmol/L</option>
     </select>
 
-    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button  id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button  id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button  id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <input type="number" id="reading" placeholder="Ingrese la lectura de azúcar en sangre" min="0" required />
+    <button id="checkBtn" class="sound-Jazak">Controlar el azúcar en la sangre</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 Descargar CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ Resultados de impresión</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 Últimos 100 cheques</h3>
     <div id="history"></div>
-    
+
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
-      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+      <p><strong>Descargo de responsabilidad:</strong> Esta herramienta es solo para fines educativos y de seguimiento
+        personal. NO reemplaza el consejo, diagnóstico ni tratamiento médico profesional. Siempre consulte a un
+        profesional de la salud para el diagnóstico y el control de la glucemia o la diabetes.</p>
+      <p>Rangos de azúcar en sangre referenciados desde el <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">Asociación Americana de la Diabetes (ADA)</a> y <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">Organización Mundial de la Salud (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ Esta herramienta está diseñada para ayudarle a controlar sus niveles de azúcar en sangre y ofrecerle
+        orientación general basada en sus lecturas. Ofrece sugerencias de actividades saludables y opciones dietéticas
+        basadas en la información proporcionada. Sin embargo, es importante tener en cuenta que esta herramienta no
+        sustituye el consejo ni el tratamiento médico profesional.
+        Siempre consulte con un profesional de la salud para obtener consejos médicos personalizados y planes de
+        tratamiento.
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ Si experimenta síntomas graves, como confusión, convulsiones o pérdida del conocimiento, busque atención
+        médica de emergencia de inmediato. Esta herramienta no está diseñada para diagnosticar ni tratar ninguna
+        afección médica.
         <br />
         <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 Las sugerencias proporcionadas se basan en pautas generales y pueden no ser adecuadas para todos.
       </div>
     </div>
 
@@ -250,51 +253,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "Hipoglucemia grave",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ ¡Peligro de baja glucosa! Tome la glucosa inmediatamente y llame al 911.",
+          workout: "No hagas ejercicio. Consume azúcar de acción rápida y descansa.",
+          food: "Beber jugo de naranja, tabletas de glucosa, caramelos.",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "Hipoglucemia",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "Nivel bajo de azúcar. Coma algo azucarado y vuelva a controlarse en 15 minutos.",
+          workout: "Evite hacer ejercicio hasta que esté estable.",
+          food: "Plátanos, manzanas, agua con miel, jugos de frutas.",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
           label: "Normal",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "Nivel de azúcar en sangre dentro de un rango saludable. Mantenga una alimentación equilibrada y una hidratación adecuada.",
+          workout: "🏃 Cardio ligero o caminar.",
+          food: "Granos integrales, verduras de hoja verde, proteínas magras, frutas frescas como bayas y manzanas.",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "Pre-diabetes",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "Ligeramente alto. Iniciar o mantener hábitos saludables, reducir el consumo de azúcar.",
+          workout: "🚶 Caminatas diarias de 30 minutos, ejercicios básicos de fuerza.",
+          food: "Avena, legumbres, agua de canela, frutos secos y cítricos.",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
           label: "Diabetes",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "Nivel alto de azúcar. Consulte con un médico sobre su estilo de vida y plan de medicación.",
+          workout: "🏃 Cardio moderado. Vigila de cerca tus niveles de azúcar.",
+          food: "Alimentos ricos en fibra, nueces, bayas, agua de okra y evitar las bebidas azucaradas.",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "Hiperglucemia grave",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ ¡Peligrosamente alto! ¡Llame al 911 inmediatamente!",
+          workout: "❌ No haga ejercicio. Busque ayuda de emergencia.",
+          food: "Bebe agua, evita el azúcar y los carbohidratos.",
         };
       }
     }
@@ -344,7 +347,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("Ingrese una lectura de azúcar en sangre válida.");
         readingInput.focus();
         return;
       }
@@ -375,9 +378,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>Lectura:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>Actividad sugerida:</strong> ${suggestion.workout}</p>
+        <p><strong>Sugerencias de alimentos, frutas y jugos:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();
@@ -443,23 +446,23 @@
     // On page load show last 100 checks automatically
     refreshHistory();
   </script>
-  
-  
-    <!-- Sound effect for button click -->
-    <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
-        preload="auto"></audio>
-    <!-- <button class="sound-Jazak">Click Me</button> -->
-    <script>
-        const buttonsJazak = document.querySelectorAll('.sound-Jazak');
-        const soundJazak = document.getElementById('click-Jazak');
 
-        buttonsJazak.forEach(button => {
-            button.addEventListener('click', () => {
-                soundJazak.currentTime = 0;
-                soundJazak.play();
-            });
-        });
-    </script>
+
+  <!-- Sound effect for button click -->
+  <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+    preload="auto"></audio>
+  <!-- <button class="sound-Jazak">Click Me</button> -->
+  <script>
+    const buttonsJazak = document.querySelectorAll('.sound-Jazak');
+    const soundJazak = document.getElementById('click-Jazak');
+
+    buttonsJazak.forEach(button => {
+      button.addEventListener('click', () => {
+        soundJazak.currentTime = 0;
+        soundJazak.play();
+      });
+    });
+  </script>
 
 </body>
 
