@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Sugar Monitor & Guidance 🩺</title>
+  <title>Monitoraggio e guida della glicemia 🩺</title>
   <link rel="stylesheet" href="../css/style.css" />
   <script src="../js/script.js"></script>
 </head>
@@ -24,20 +24,20 @@
 
       <ul id="navLinks">
         <li><a href="it_index.html" class="active">Home</a></li>
-        <li><a href="it_product.html">Product</a></li>
-        <li><a href="it_about.html">About</a></li>
-        <li><a href="it_contact.html">Contact</a></li>
+        <li><a href="it_product.html">Prodotto</a></li>
+        <li><a href="it_about.html">Informazioni</a></li>
+        <li><a href="it_contact.html">Contatti</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">Lingua ▼</a>
           <div class="dropdown-content">
-            <a href="../index.html">English</a>
-            <a href="../Ku/ku_index.html">Italian</a>
-            <a href="../ar/ar_index.html">Arabic</a>
-            <a href="../fr/fr_index.html">French</a>
-            <a href="../sp/sp_index.html">Spanish</a>
-            <a href="../po/po_index.html">Polish</a>
-            <a href="../ch/ch_index.html">Chinese</a>
-            <a href="../ge/ge_index.html">German</a>
+            <a href="../index.html">Inglese</a>
+            <a href="../Ku/ku_index.html">Curda</a>
+            <a href="../ar/ar_index.html">Arabo</a>
+            <a href="../fr/fr_index.html">Francese</a>
+            <a href="../sp/sp_index.html">Spagnolo</a>
+            <a href="../po/po_index.html">Polacco</a>
+            <a href="../ch/ch_index.html">Cinese</a>
+            <a href="../ge/ge_index.html">Tedesco</a>
 
           </div>
         </li>
@@ -47,26 +47,26 @@
 
   <div class="container">
     <h2>Blood Sugar Monitor & Guidance 🩺</h2>
-    <div id="dateTimeDisplay"> Loading current time...</div>
+    <div id="dateTimeDisplay"> Caricamento dell'ora corrente...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="Nome completo (facoltativo)-Full Name (optional)" />
+    <input type="number" id="age" placeholder="Età (facoltativo)-Age (optional)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">Genere (facoltativo)-Gender (optional)</option>
+      <option value="Male">Maschia-Male</option>
+      <option value="Female">Femmina-Female</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="Città (facoltativo)-City (optional)" />
+    <input type="text" id="phone" placeholder="Numero di telefono (facoltativo)-Phone Number (optional)" />
+    <input type="email" id="email" placeholder="E-mail (facoltativo)-Email (optional)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
-      <option value="prediabetes">Pre-diabetes</option>
+      <option value="none">-- Seleziona il tipo di diabete --Select Diabetes Type --</option>
+      <option value="non_diabetic">Normale (senza diabete)-Normal (No Diabetes)</option>
+      <option value="type1">diabete di tipo 1 -Type 1 Diabetes</option>
+      <option value="type2">diabete di tipo 2 -Type 2 Diabetes</option>
+      <option value="gestational">diabete gestazionale -Gestational Diabetes</option>
+      <option value="prediabetes">Prediabete -Pre-diabetes</option>
     </select>
 
     <select id="unit">
@@ -74,39 +74,39 @@
       <option value="mmol">mmol/L</option>
     </select>
 
-    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <input type="number" id="reading" placeholder="Inserisci la lettura della glicemia" min="0" required />
+    <button id="checkBtn" class="sound-Jazak">Controllare la glicemia</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 Scaricamento CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ Risultati di stampa</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 Ultimi 100 controlli</h3>
     <div id="history"></div>
 
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
+      <p><strong>Disclaimer:</strong> Questo strumento è solo a scopo didattico e di monitoraggio personale. NON
+        sostituisce il parere, la diagnosi o il trattamento di un medico professionista. Consultare sempre un medico per
+        la diagnosi e la gestione della glicemia o del diabete.</p>
       <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+          rel="noopener noreferrer">Associazione americana per il diabete (ADA)</a> e <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">Organizzazione mondiale della sanità (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ Questo strumento è progettato per aiutarti a monitorare i livelli di glicemia e fornire indicazioni generali
+        basate sui tuoi valori. Offre suggerimenti per attività salutari e scelte alimentari basate sui dati forniti.
+        Tuttavia, è importante notare che questo strumento non sostituisce il parere o il trattamento di un medico.
+        Consulta sempre un professionista sanitario per consigli medici personalizzati e piani di trattamento.
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ In caso di sintomi gravi come confusione, convulsioni o perdita di coscienza, consultare immediatamente un
+        medico. Questo strumento non è destinato a diagnosticare o trattare alcuna condizione medica.
         <br />
         <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 I suggerimenti forniti si basano su linee guida generali e potrebbero non essere adatti a tutti.
       </div>
     </div>
 
@@ -249,51 +249,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "Ipoglicemia grave",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ Pericolosamente basso! Prendi immediatamente il glucosio e chiama il 911.",
+          workout: "Niente esercizio fisico. Mangia zuccheri ad azione rapida e riposati.",
+          food: "Bere succo d'arancia, compresse di glucosio, caramelle.",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "Ipoglicemia",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "Glicemia bassa. Mangia qualcosa di zuccherato e ricontrolla tra 15 minuti.",
+          workout: "Evitare l'allenamento finché non si raggiunge la stabilità.",
+          food: "Banane, mele, acqua e miele, succhi di frutta.",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
-          label: "Normal",
+          label: "Normale",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "Glicemia entro limiti salutari. Mantenere pasti equilibrati e idratazione.",
+          workout: "🏃 Cardio leggero o camminata.",
+          food: "Cereali integrali, verdure a foglia verde, proteine ​​magre, frutta fresca come bacche e mele.",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "Prediabete",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "Leggermente alto. Inizia o mantieni abitudini sane, riduci l'assunzione di zucchero.",
+          workout: "🚶 Passeggiate giornaliere da 30 minuti, esercizi di forza di base.",
+          food: "Avena, legumi, acqua alla cannella, noci e agrumi.",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
-          label: "Diabetes",
+          label: "Diabete",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "Livello di zucchero elevato. Consultare un medico per un piano di stile di vita e farmaci.",
+          workout: "🏃 Cardio moderato. Monitorare attentamente i livelli di zucchero.",
+          food: "Cibi ricchi di fibre, noci, bacche, acqua di okra ed evitare le bevande zuccherate.",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "Iperglicemia grave",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ Pericolosamente alto! Chiama subito il 911!",
+          workout: "❌ Niente esercizio. Cercare soccorso.",
+          food: "Niente esercizio. Cercare soccorso.",
         };
       }
     }
@@ -343,7 +343,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("Inserisci un valore valido per la glicemia.");
         readingInput.focus();
         return;
       }
@@ -374,9 +374,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>Lettura:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>Attività suggerita:</strong> ${suggestion.workout}</p>
+        <p><strong>Suggerimenti su cibo, frutta e succhi:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();

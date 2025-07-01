@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Sugar Monitor & Guidance 🩺</title>
+  <title>Monitor i wskazówki dotyczące poziomu cukru we krwi 🩺</title>
   <link rel="stylesheet" href="../css/style.css" />
   <script src="../js/script.js"></script>
 </head>
@@ -23,21 +23,21 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="po_index.html" class="active">Home</a></li>
-        <li><a href="po_product.html">Product</a></li>
-        <li><a href="po_about.html">About</a></li>
-        <li><a href="po_contact.html">Contact</a></li>
+        <li><a href="po_index.html" class="active">Strona główna</a></li>
+        <li><a href="po_product.html">Produkt</a></li>
+        <li><a href="po_about.html">Informacje</a></li>
+        <li><a href="po_contact.html">Kontakt</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">Język ▼</a>
           <div class="dropdown-content">
-            <a href="../index.html">English</a>
-            <a href="../Ku/ku_index.html">Kurdish</a>
-            <a href="../ar/ar_index.html">Arabic</a>
-            <a href="../fr/fr_index.html">French</a>
-            <a href="../sp/sp_index.html">Spanish</a>
-            <a href="../it/it_index.html">Italian</a>
-            <a href="../ch/ch_index.html">Chinese</a>
-            <a href="../ge/ge_index.html">German</a>
+            <a href="../index.html">angielski</a>
+            <a href="../Ku/ku_index.html">kurdyjski</a>
+            <a href="../ar/ar_index.html">arabski</a>
+            <a href="../fr/fr_index.html">francuski</a>
+            <a href="../sp/sp_index.html">hiszpański</a>
+            <a href="../it/it_index.html">włoski</a>
+            <a href="../ch/ch_index.html">chiński</a>
+            <a href="../ge/ge_index.html">niemiecki</a>
 
           </div>
         </li>
@@ -46,27 +46,27 @@
   </header>
 
   <div class="container">
-    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
-    <div id="dateTimeDisplay"> Loading current time...</div>
+    <h2>Monitor i wskazówki dotyczące poziomu cukru we krwi 🩺</h2>
+    <div id="dateTimeDisplay"> Ładowanie bieżącego czasu...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="Pełne imię i nazwisko (opcjonalnie)-Full Name (optional)" />
+    <input type="number" id="age" placeholder="Wiek (opcjonalnie)-Age (optional)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">Płeć (opcjonalnie)-Gender (optional)</option>
+      <option value="Male">Mężczyzna-Male</option>
+      <option value="Female">Kobieta-Female</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="Miasto (opcjonalnie)-City (optional)" />
+    <input type="text" id="phone" placeholder="Numer telefonu (opcjonalnie)-Phone Number (optional)" />
+    <input type="email" id="email" placeholder="E-mail (opcjonalnie)-Email (optional)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
-      <option value="prediabetes">Pre-diabetes</option>
+      <option value="none">-- Wybierz typ cukrzycy --Select Diabetes Type--</option>
+      <option value="non_diabetic">Normalny (bez cukrzycy)-Normal (No Diabetes)</option>
+      <option value="type1">Cukrzyca typu 1-Type 1 Diabetes</option>
+      <option value="type2">Cukrzyca typu 2-Type 2 Diabetes</option>
+      <option value="gestational">Cukrzyca ciążowa-Gestational Diabetes</option>
+      <option value="prediabetes">Stan przedcukrzycowy-Pre-diabetes</option>
     </select>
 
     <select id="unit">
@@ -74,39 +74,46 @@
       <option value="mmol">mmol/L</option>
     </select>
 
-    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <input type="number" id="reading" placeholder="Wprowadź wynik pomiaru cukru we krwi" min="0" required />
+    <button id="checkBtn" class="sound-Jazak">Sprawdź poziom cukru we krwi</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 Pobierać CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ Wydrukuj wyniki</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 Ostatnie 100 kontroli</h3>
     <div id="history"></div>
 
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
-      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+      <p><strong>Zastrzeżenie:</strong> To narzędzie służy wyłącznie do celów edukacyjnych i śledzenia osobistego. NIE
+        zastępuje ono profesjonalnej porady medycznej, diagnozy ani leczenia. Zawsze konsultuj się z pracownikiem służby
+        zdrowia w celu
+        diagnozy i leczenia poziomu cukru we krwi lub cukrzycy.</p>
+      <p>Zakresy poziomu cukru we krwi odnoszą się do <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">Amerykańskie Stowarzyszenie Cukrzycowe (ADA)</a> and <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">Światowa Organizacja Zdrowia (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ To narzędzie ma pomóc Ci monitorować poziom cukru we krwi i zapewnić ogólne wskazówki na podstawie Twoich
+        odczytów. Oferuje sugestie dotyczące zdrowych aktywności i wyborów dietetycznych na podstawie podanych danych.
+        Jednak
+        ważne jest, aby pamiętać, że to narzędzie nie zastępuje profesjonalnej porady medycznej ani leczenia.
+        Zawsze konsultuj się z pracownikiem służby zdrowia w celu uzyskania spersonalizowanej porady medycznej i planów
+        leczenia.
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ To narzędzie ma pomóc Ci monitorować poziom cukru we krwi i zapewnić ogólne wskazówki na podstawie Twoich
+        odczytów. Oferuje sugestie dotyczące zdrowych aktywności i wyborów dietetycznych na podstawie podanych danych.
+        Jednak
+        ważne jest, aby pamiętać, że to narzędzie nie zastępuje profesjonalnej porady medycznej ani leczenia.
+        Zawsze konsultuj się z pracownikiem służby zdrowia w celu uzyskania spersonalizowanej porady medycznej i planów
+        leczenia.
         <br />
         <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 Podane sugestie opierają się na ogólnych wytycznych i mogą nie być odpowiednie dla każdego.
       </div>
     </div>
 
@@ -159,7 +166,7 @@
     </a> -->
   </div>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer>
     <p>Utworzone przez <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
     <p>Ostatnia aktualizacja: lipiec 2025</p>
@@ -249,51 +256,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "Ciężka hipoglikemia",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ Niebezpiecznie niski! Natychmiast weź glukozę i zadzwoń pod numer 911.",
+          workout: "Żadnych ćwiczeń. Jedz szybko działający cukier i odpoczywaj.",
+          food: "Pij sok pomarańczowy, jedz tabletki glukozy i cukierki.",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "Hipoglikemia",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "Niski poziom cukru we krwi. Zjedz coś słodkiego i sprawdź ponownie za 15 minut.",
+          workout: "Unikaj ćwiczeń, dopóki stan się nie ustabilizuje.",
+          food: "Banany, jabłka, woda miodowa, soki owocowe.",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
-          label: "Normal",
+          label: "Normalna",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "Poziom cukru we krwi w zdrowym zakresie. Utrzymuj zrównoważone posiłki i nawodnienie.",
+          workout: "🏃 Lekkie ćwiczenia cardio lub spacery.",
+          food: "Pełne ziarna, zielone warzywa liściaste, chude białka, świeże owoce, takie jak jagody i jabłka.",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "Stan przedcukrzycowy",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "Nieco wysokie. Rozpocznij lub utrzymaj zdrowe nawyki, zmniejsz spożycie cukru.",
+          workout: "🚶 Codzienne 30-minutowe spacery, podstawowe ćwiczenia siłowe.",
+          food: "Owies, strączki, woda cynamonowa, orzechy i owoce cytrusowe.",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
-          label: "Diabetes",
+          label: "Cukrzyca",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "Wysoki poziom cukru. Skonsultuj się z lekarzem w sprawie stylu życia i planu leczenia.",
+          workout: "🏃 Umiarkowany cardio. Dokładnie monitoruj poziom cukru.",
+          food: "Jedz produkty bogate w błonnik, orzechy, jagody, wodę z okra i unikaj słodkich napojów.",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "Ciężka hiperglikemia",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ Niebezpiecznie wysoko! Zadzwoń natychmiast pod numer 911!",
+          workout: "❌ Brak ćwiczeń. Należy szukać pomocy doraźnej.",
+          food: "Pij wodę, unikaj cukru i węglowodanów.",
         };
       }
     }
@@ -343,7 +350,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("Proszę wprowadzić prawidłowy wynik pomiaru poziomu cukru we krwi.");
         readingInput.focus();
         return;
       }
@@ -374,9 +381,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>Czytanie:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>Sugerowana aktywność:</strong> ${suggestion.workout}</p>
+        <p><strong>Propozycje żywności, owoców i soków:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();
