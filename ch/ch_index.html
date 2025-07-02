@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Sugar Monitor & Guidance 🩺</title>
+  <title>血糖监测与指导 🩺</title>
   <link rel="stylesheet" href="../css/style.css" />
   <script src="../js/script.js"></script>
 </head>
@@ -23,21 +23,21 @@
       </div>
 
       <ul id="navLinks">
-        <li><a href="ch_index.html" class="active">Home</a></li>
-        <li><a href="ch_product.html">Product</a></li>
-        <li><a href="ch_about.html">About</a></li>
-        <li><a href="ch_contact.html">Contact</a></li>
+        <li><a href="ch_index.html" class="active">首页</a></li>
+        <li><a href="ch_product.html">产品</a></li>
+        <li><a href="ch_about.html">关于我们</a></li>
+        <li><a href="ch_contact.html">联系我们</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Language ▼</a>
+          <a href="#" class="dropbtn">语言 ▼</a>
           <div class="dropdown-content">
-            <a href="../index.html">English</a>
-            <a href="../ar/ar_index.html">Arabic</a>
-            <a href="../fr/fr_index.html">French</a>
-            <a href="../sp/sp_index.html">Spanish</a>
-            <a href="../po/po_index.html">Polish</a>
-            <a href="../it/it_index.html">Italian</a>
-            <a href="../ch/ch_index.html">Chinese</a>
-            <a href="../ge/ge_index.html">German</a>
+            <a href="../index.html">英语</a>
+            <a href="../ar/ar_index.html">阿拉伯语</a>
+            <a href="../fr/fr_index.html">法语</a>
+            <a href="../sp/sp_index.html">西班牙语</a>
+            <a href="../po/po_index.html">波兰语</a>
+            <a href="../it/it_index.html">意大利语</a>
+            <a href="../ch/ch_index.html">中文</a>
+            <a href="../ge/ge_index.html">德语</a>
 
           </div>
         </li>
@@ -46,27 +46,27 @@
   </header>
 
   <div class="container">
-    <h2>Blood Sugar Monitor & Guidance 🩺</h2>
-    <div id="dateTimeDisplay"> Loading current time...</div>
+    <h2>血糖监测与指导 🩺</h2>
+    <div id="dateTimeDisplay"> 正在加载当前时间...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="全名（可选）-FullName(optional)" />
+    <input type="number" id="age" placeholder="年龄（可选）-Age(optional)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">性别（可选）-Gender(optional)</option>
+      <option value="Male">男性-Male</option>
+      <option value="Female">女性-Female</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="城市（可选）-City(optional)" />
+    <input type="text" id="phone" placeholder="电话号码（可选）-Phone Number(optional)" />
+    <input type="email" id="email" placeholder="电子邮件（可选）-Email(optional)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
-      <option value="prediabetes">Pre-diabetes</option>
+      <option value="none">-- 选择糖尿病类型 --Select Diabetes Type --</option>
+      <option value="non_diabetic">正常（无糖尿病）-Normal(No Diabetes)</option>
+      <option value="type1">1型糖尿病-Type 1 Diabetes</option>
+      <option value="type2">2型糖尿病-Type 2 Diabetes</option>
+      <option value="gestational">妊娠期糖尿病-Gestational Diabetes</option>
+      <option value="prediabetes">糖尿病前期-Pre-diabetes</option>
     </select>
 
     <select id="unit">
@@ -74,39 +74,34 @@
       <option value="mmol">mmol/L</option>
     </select>
 
-    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <input type="number" id="reading" placeholder="输入血糖读数" min="0" required />
+    <button id="checkBtn" class="sound-Jazak">检查血糖</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 下载 CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ 打印结果</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 最近 100 次检查</h3>
     <div id="history"></div>
 
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
-      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+      <p><strong>免责声明:</strong> 此工具仅用于教育和个人追踪目的。它不能替代专业的医疗建议、诊断或治疗。对于血糖或糖尿病的诊断和管理，请务必咨询医疗保健专业人士。</p>
+      <p>血糖范围参考 <a href="https://diabetes.org/a1c" target="_blank" rel="noopener noreferrer">美国糖尿病协会 (ADA)</a> and <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">世界卫生组织 (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ 此工具旨在帮助您监测血糖水平，并根据您的血糖读数提供一般指导。它会根据您输入的信息，提供健康活动和饮食选择的建议。但是，
+        需要注意的是，此工具不能替代专业的医疗建议或治疗。
+        请务必咨询医疗保健专业人士，获取个性化的医疗建议和治疗方案。
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ 如果您出现严重症状，例如意识混乱、癫痫发作或失去意识，请立即寻求紧急医疗救助。本工具不用于诊断或治疗任何疾病。
         <br />
         <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 提供的建议基于一般准则，可能并不适合所有人.
       </div>
     </div>
 
@@ -250,51 +245,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "严重低血糖",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ 血糖过低，危险！立即服用葡萄糖并拨打911。",
+          workout: "不要运动。吃速效糖并休息。",
+          food: "喝橙汁、葡萄糖片、糖果。",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "低血糖",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "低血糖。吃点甜食，15分钟后再检查。",
+          workout: "稳定之前避免锻炼。",
+          food: "香蕉、苹果、蜂蜜水、果汁。",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
-          label: "Normal",
+          label: "普通的",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "血糖处于健康范围内。保持均衡饮食和水分。",
+          workout: "🏃 轻度有氧运动或散步。",
+          food: "全谷物、绿叶蔬菜、瘦肉蛋白质、新鲜水果，如浆果和苹果。",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "糖尿病前期",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "略高。开始或保持健康的生活习惯，减少糖摄入量。",
+          workout: "🚶 每天步行30分钟，进行基本的力量练习。",
+          food: "燕麦、豆类、肉桂水、坚果和柑橘类水果。",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
-          label: "Diabetes",
+          label: "糖尿病",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "血糖过高。请咨询医生，了解生活方式和药物治疗计划。",
+          workout: "🏃 适度有氧运动。密切监测血糖水平。",
+          food: "富含纤维的食物、坚果、浆果、秋葵水，避免含糖饮料。",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "严重高血糖",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ 危险！立即拨打911！",
+          workout: "❌ 禁止活动。寻求紧急帮助。",
+          food: "喝水，避免吃糖和碳水化合物。",
         };
       }
     }
@@ -344,7 +339,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("请输入有效的血糖读数。");
         readingInput.focus();
         return;
       }
@@ -375,9 +370,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>阅读:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>建议活动:</strong> ${suggestion.workout}</p>
+        <p><strong>食物、水果和果汁建议:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();
