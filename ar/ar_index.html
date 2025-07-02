@@ -47,26 +47,26 @@
 
   <div class="container">
     <h2>جهاز مراقبة سكر الدم والإرشادات 🩺</h2>
-    <div id="dateTimeDisplay"> Loading current time...</div>
+    <div id="dateTimeDisplay"> جاري تحميل الوقت الحالي...</div>
 
-    <input type="text" id="fullName" placeholder="Full Name (optional)" />
-    <input type="number" id="age" placeholder="Age (optional)" />
+    <input type="text" id="fullName" placeholder="الاسم الكامل (اختياري)-Full Name(optional)" />
+    <input type="number" id="age" placeholder="العمر (اختياري)-Age(optional)" />
     <select id="gender">
-      <option value="">Gender (optional)</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
+      <option value="">الجنس (اختياري)-Gender(optional)</option>
+      <option value="Male">ذكر-Male</option>
+      <option value="Female">أنثى-Female</option>
     </select>
-    <input type="text" id="city" placeholder="City (optional)" />
-    <input type="text" id="phone" placeholder="Phone Number (optional)" />
-    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="text" id="city" placeholder="المدينة (اختياري)-City(optional)" />
+    <input type="text" id="phone" placeholder="رقم الهاتف (اختياري)-Phone Number(optional)" />
+    <input type="email" id="email" placeholder="البريد الإلكتروني (اختياري)-Email(optional)" />
 
     <select id="diabetesType" required>
-      <option value="none">-- Select Diabetes Type --</option>
-      <option value="non_diabetic">Normal (No Diabetes)</option>
-      <option value="type1">Type 1 Diabetes</option>
-      <option value="type2">Type 2 Diabetes</option>
-      <option value="gestational">Gestational Diabetes</option>
-      <option value="prediabetes">Pre-diabetes</option>
+      <option value="none">-- حدد نوع مرض السكري --Select Diabetes Type --</option>
+      <option value="non_diabetic">طبيعي (لا يوجد سكري)-Normal(No Diabetes)</option>
+      <option value="type1">مرض السكري من النوع الأول-Type 1 Diabetes</option>
+      <option value="type2">مرض السكري من النوع الثاني-Type 2 Diabetes</option>
+      <option value="gestational">سكري الحمل-Gestational Diabetes</option>
+      <option value="prediabetes">ما قبل السكري-Pre-diabetes</option>
     </select>
 
     <select id="unit">
@@ -74,39 +74,37 @@
       <option value="mmol">mmol/L</option>
     </select>
 
-    <input type="number" id="reading" placeholder="Enter blood sugar reading" min="0" required />
-    <button id="checkBtn" class="sound-Jazak">Check Blood Sugar</button>
-    <button id="downloadCsv" class="sound-Jazak">📥 Download CSV</button>
-    <button id="printResults" class="sound-Jazak">🖨️ Print Results</button>
+    <input type="number" id="reading" placeholder="أدخل قراءة نسبة السكر في الدم" min="0" required />
+    <button id="checkBtn" class="sound-Jazak">فحص نسبة السكر في الدم</button>
+    <button id="downloadCsv" class="sound-Jazak">📥 تحميل CSV</button>
+    <button id="printResults" class="sound-Jazak">🖨️ نتائج الطباعة</button>
 
 
 
 
     <div id="result" style="display:none;"></div>
 
-    <h3>📜 Last 100 Checks</h3>
+    <h3>📜 آخر 100 فحص</h3>
     <div id="history"></div>
 
     <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> This tool is for educational and personal tracking purposes only. It does NOT
-        replace professional medical advice, diagnosis, or treatment. Always consult a healthcare professional for
-        diagnosis and management of blood sugar or diabetes.</p>
-      <p>Blood sugar ranges referenced from the <a href="https://diabetes.org/a1c" target="_blank"
-          rel="noopener noreferrer">American Diabetes Association (ADA)</a> and <a
+      <p><strong>تنصل:</strong> هذه الأداة مخصصة لأغراض تعليمية وتتبع شخصي فقط. وهي لا تُغني عن المشورة الطبية أو
+        التشخيص أو العلاج. استشر دائمًا أخصائي رعاية صحية لتشخيص وإدارة سكر الدم أو داء السكري.</p>
+      <p>نطاقات السكر في الدم المشار إليها من <a href="https://diabetes.org/a1c" target="_blank"
+          rel="noopener noreferrer">الجمعية الأمريكية للسكري(ADA)</a> و <a
           href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
-          rel="noopener noreferrer">World Health Organization (WHO)</a>.</p>
+          rel="noopener noreferrer">منظمة الصحة العالمية (WHO)</a>.</p>
       <div style="color: red;">
-        ℹ️ This tool is designed to help you monitor your blood sugar levels and provide general guidance based on your
-        readings. It offers suggestions for healthy activities and dietary choices based on the input provided. However,
-        it is important to note that this tool is not a substitute for professional medical advice or treatment.
-        Always consult with a healthcare professional for personalized medical advice and treatment plans.
+        ℹ️ صُممت هذه الأداة لمساعدتك على مراقبة مستويات السكر في الدم وتقديم إرشادات عامة بناءً على قراءاتك. كما تقدم
+        اقتراحات لأنشطة صحية وخيارات غذائية بناءً على المعلومات المُقدمة. مع ذلك، من المهم ملاحظة أن هذه الأداة لا تُغني
+        عن الاستشارة الطبية أو العلاج المُتخصص.
+        استشر دائمًا أخصائي رعاية صحية للحصول على نصائح طبية مُخصصة وخطط علاجية.
         <br />
         <br />
-        ⚠️ If you experience severe symptoms such as confusion, seizures, or loss of consciousness, seek emergency
-        medical help immediately. This tool is not intended to diagnose or treat any medical conditions.
+        ⚠️ إذا شعرت بأعراض حادة كالارتباك أو النوبات أو فقدان الوعي، فاطلب المساعدة الطبية الطارئة فورًا. هذه الأداة غير مخصصة لتشخيص أو علاج أي حالات طبية.
         <br />
         <br />
-        🩺 The suggestions provided are based on general guidelines and may not be suitable for everyone
+        🩺 الاقتراحات المقدمة تعتمد على إرشادات عامة وقد لا تكون مناسبة للجميع.
       </div>
     </div>
 
@@ -250,51 +248,51 @@
 
       if (reading < 54) {
         return {
-          label: "Severe Hypoglycemia",
+          label: "نقص سكر الدم الشديد",
           color: "#dc3545",
-          message: "❗ Dangerously Low! Take glucose immediately and call 911.",
-          workout: "No exercise. Eat fast-acting sugar and rest.",
-          food: "Drink orange juice, glucose tablets, candies.",
+          message: "❗ انخفاض خطير! خذ الجلوكوز فورًا واتصل بالرقم 911.",
+          workout: "لا تمارس الرياضة. تناول سكريات سريعة المفعول واسترح.",
+          food: "اشرب عصير البرتقال، وأقراص الجلوكوز، والحلويات.",
         };
       } else if (reading < thresholds.hypoglycemia) {
         return {
-          label: "Hypoglycemia",
+          label: "نقص سكر الدم",
           color: "#dc3545",
-          message: "Low blood sugar. Eat something sugary and recheck in 15 mins.",
-          workout: "Avoid workout until stable.",
-          food: "Bananas, apples, honey water, fruit juices.",
+          message: "انخفاض سكر الدم. تناول شيئًا سكريًا، ثم راجع مستوى السكر بعد ١٥ دقيقة.",
+          workout: "تجنب التمرين حتى الاستقرار.",
+          food: "الموز، التفاح، ماء العسل، عصائر الفاكهة.",
         };
       } else if (reading <= thresholds.normalHigh) {
         return {
-          label: "Normal",
+          label: "طبيعي",
           color: "#198754",
-          message: "Blood sugar in healthy range. Maintain balanced meals & hydration.",
-          workout: "🏃 Light cardio or walking.",
-          food: "Whole grains, leafy greens, lean proteins, fresh fruits like berries and apples.",
+          message: "حافظ على مستوى سكر الدم ضمن المعدل الصحي. حافظ على وجبات متوازنة وشرب كميات كافية من الماء.",
+          workout: "🏃 تمارين القلب الخفيفة أو المشي.",
+          food: "الحبوب الكاملة، والخضراوات الورقية، والبروتينات الخالية من الدهون، والفواكه الطازجة مثل التوت والتفاح.",
         };
       } else if (reading <= thresholds.prediabetesHigh) {
         return {
-          label: "Pre-Diabetes",
+          label: "ما قبل السكري",
           color: "#ffc107",
-          message: "Slightly high. Begin or maintain healthy habits, lower sugar intake.",
-          workout: "🚶 Daily 30 min walks, basic strength exercises.",
-          food: "Oats, legumes, cinnamon water, nuts, and citrus fruits.",
+          message: "مرتفع قليلاً. ابدأ أو حافظ على عادات صحية، وقلل من تناول السكر.",
+          workout: "🚶 المشي يوميًا لمدة 30 دقيقة، وتمارين القوة الأساسية.",
+          food: "الشوفان والبقوليات وماء القرفة والمكسرات والحمضيات.",
         };
       } else if (reading <= thresholds.diabetesHigh) {
         return {
-          label: "Diabetes",
+          label: "السكري",
           color: "#fd7e14",
-          message: "High sugar level. Consult a doctor for lifestyle and medication plan.",
-          workout: "🏃 Moderate cardio. Monitor sugar levels closely.",
-          food: "Fiber-rich foods, nuts, berries, okra water, and avoid sugary drinks.",
+          message: "ارتفاع مستوى السكر. استشر طبيبًا لضبط نمط حياتك وبرنامجك الدوائي.",
+          workout: "🏃 تمارين قلبية معتدلة. راقب مستويات السكر عن كثب.",
+          food: "الأطعمة الغنية بالألياف، والمكسرات، والتوت، وماء البامية، وتجنب المشروبات السكرية.",
         };
       } else {
         return {
-          label: "Severe Hyperglycemia",
+          label: "ارتفاع سكر الدم الشديد",
           color: "#dc3545",
-          message: "❗ Dangerously High! Call 911 immediately!",
-          workout: "❌ No exercise. Seek emergency help.",
-          food: "Drink water, avoid sugar and carbohydrates.",
+          message: "❗ ارتفاع خطير! اتصل بالرقم 911 فورًا!",
+          workout: "❌ لا تمارس الرياضة. اطلب المساعدة الطارئة.",
+          food: "اشرب الماء، وتجنب السكر والكربوهيدرات.",
         };
       }
     }
@@ -310,7 +308,7 @@
     function buildTable(data) {
       if (data.length === 0) return "<p>No records yet.</p>";
       return (
-        "<table><thead><tr><th>Date & Time</th><th>Reading (mg/dL)</th><th>Diabetes-Type</th><th>Status</th><th>Name</th><th>Age</th><th>Gender</th><th>City</th><th>Phone</th><th>Email</th></tr></thead><tbody>" +
+        "<table><thead><tr><th>التاريخ والوقت</th><th>قراءة (mg/dL)</th><th>داء السكري من النوع</th><th>حالة</th><th>اسم</th><th>عمر</th><th>جنس</th><th>مدينة</th><th>هاتف</th><th>بريد إلكتروني</th></tr></thead><tbody>" +
         data
           .map(
             (row) => `
@@ -344,7 +342,7 @@
       const readingInput = document.getElementById("reading");
       const readingVal = readingInput.value.trim();
       if (!readingVal || isNaN(readingVal) || Number(readingVal) < 0) {
-        alert("Please enter a valid blood sugar reading.");
+        alert("الرجاء إدخال قراءة صحيحة لسكر الدم.");
         readingInput.focus();
         return;
       }
@@ -375,9 +373,9 @@
       resultBox.innerHTML = `
         <h3 style="color:${suggestion.color}">${suggestion.label}</h3>
         <p>${suggestion.message}</p>
-        <p><strong>Reading:</strong> ${converted.toFixed(1)} mg/dL</p>
-        <p><strong>Suggested Activity:</strong> ${suggestion.workout}</p>
-        <p><strong>Food, Fruits & Juices Suggestions:</strong> ${suggestion.food}</p>
+        <p><strong>قراءة:</strong> ${converted.toFixed(1)} mg/dL</p>
+        <p><strong>النشاط المقترح:</strong> ${suggestion.workout}</p>
+        <p><strong>اقتراحات الطعام والفواكه والعصائر:</strong> ${suggestion.food}</p>
       `;
 
       const date = new Date().toLocaleString();
