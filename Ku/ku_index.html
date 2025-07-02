@@ -59,7 +59,6 @@
     <input type="text" id="city" placeholder="شار (ئارەزوومەندانەیە) -City (optional)" />
     <input type="text" id="phone" placeholder="ژمارەی تەلەفۆن (ئارەزوومەندانەیە) - Phone Number (optional)" />
     <input type="email" id="email" placeholder="پۆستی ئەلیکترۆنی (ئارەزوومەندانەیە) -Email (optional)" />
-
     <select id="diabetesType" required>
       <option value="none">جۆری شەکرە هەڵبژێرە -- Select Diabetes Type -- </option>
       <option value="non_diabetic">ئاسایی (شەکرە نییە) -Normal (No Diabetes)-</option>
@@ -75,6 +74,7 @@
     </select>
 
     <input type="number" id="reading" placeholder="ئاستی شەکری خوێنت تێبنووسە - Enter blood sugar reading" min="0" required />
+    <p style="background-color: white; color: red;font-size: 18px;font-weight: bold;">ئاگاداربە دەتوانیت 1-2 کاتژمێر دوای خواردن پشکنین بکەیت</p>
     <button id="checkBtn" class="sound-Jazak">پشکنینی شەکری خوێن</button>
     <button id="downloadCsv" class="sound-Jazak">📥 داگرتن CSV</button>
     <button id="printResults" class="sound-Jazak">🖨️ چاپکردنی ئەنجامەکان</button>
