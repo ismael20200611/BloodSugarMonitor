@@ -125,7 +125,7 @@ nav .menu-toggle span {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f5f5f56e;
+  background-color: #f5f5f5cb;
   min-width: 160px;
   box-shadow: 0 4px 8px rgba(112, 2, 255, 0.123);
   z-index: 1;
